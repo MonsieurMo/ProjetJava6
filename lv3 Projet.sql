@@ -28,10 +28,10 @@ DELIMITER $$
 SELECT *
 FROM lvl3$$
 
-CREATE PROCEDURE findLvl3ByLigne (IN ligne INT)  NO SQL
+CREATE PROCEDURE findLvl3ById (IN ligne INT)  NO SQL
 SELECT *
 FROM lvl3
-WHERE lvl3.ligne = ligne$$ 
+WHERE lvl3.ligne = id$$ 
 
 /* NE FONCTIONNE PAS 
 CREATE PROCEDURE findLvl1ByName (IN colonne1 varchar(255), colonne2 varchar(255), colonne3 varchar(255), colonne4 varchar(255), colonne5 varchar(255), colonne6 varchar(255), colonne7 varchar(255), colonne8 varchar(255), colonne9 varchar(255), colonne10 varchar(255), colonne11 varchar(255), colonne12 varchar(255),colonne13 varchar(255), colonne14 varchar(255), colonne15 varchar(255),colonne16 varchar(255), colonne17 varchar(255), colonne18 varchar(255),colonne19 varchar(255), colonne20 varchar(255), colonne21 varchar(255),colonne22 varchar(255), colonne23 varchar(255), colonne24 varchar(255), colonne25 varchar(255), colonne26 varchar(255), colonne27 varchar(255), colonne28 varchar(255), colonne29 varchar(255), colonne30 varchar(255))  NO SQL
@@ -84,7 +84,7 @@ CREATE TABLE lvl3 (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table 'lvl1'
+-- Contenu de la table 'lvl3'
 --
 
 INSERT INTO lvl3 (ligne, colonne1, colonne2, colonne3, colonne4, colonne5, colonne6, colonne7, colonne8, colonne9, colonne10, colonne11, colonne12,colonne13, colonne14, colonne15,colonne16, colonne17, colonne18,colonne19, colonne20, colonne21,colonne22, colonne23, colonne24, colonne25, colonne26, colonne27, colonne28, colonne29, colonne30) VALUES
