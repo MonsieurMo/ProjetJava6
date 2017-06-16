@@ -15,4 +15,15 @@ public interface IView {
      *            the message
      */
     void displayMessage(String message);
+    
+    void creationLevel(int[][] map);
+    
+    void printScreen(int[][] map);
+    
+    void updateScore(int score);
+    
+    int getKey();
+    
+
+    
 }

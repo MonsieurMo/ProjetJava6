@@ -41,4 +41,30 @@ public interface IModel {
      *             the SQL exception
      */
     List<Example> getAllExamples() throws SQLException;
+    
+    
+    
+    //Methodes
+    public int[][] creationLevel();
+    
+    public int[][] getMap();
+    
+    public int[][] up();
+    
+    public int[][] down();
+    
+    public void updateDown();
+    
+    public int[][] left();
+    
+    public int[][] right();
+    
+    public void updateLeft();
+    
+    public void updateRight();
+    
+    public int getScore();
+   
+    public int[][] newMapLoading() throws SQLException;
+    
 }

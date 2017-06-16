@@ -21,6 +21,9 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
+    	Music music = new Music();
+        music.start();
+        
         final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
 
         try {

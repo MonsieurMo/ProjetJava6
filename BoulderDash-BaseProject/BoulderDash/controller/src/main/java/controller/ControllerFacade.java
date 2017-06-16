@@ -42,7 +42,8 @@ public class ControllerFacade implements IController {
      *             the SQL exception
      */
     public void start() throws SQLException {
-        this.getView().displayMessage(this.getModel().getExampleById(1).toString());
+    	
+    	/*this.getView().displayMessage(this.getModel().getExampleById(1).toString());
 
         this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
 
@@ -53,7 +54,13 @@ public class ControllerFacade implements IController {
             message.append(example);
             message.append('\n');
         }
-        this.getView().displayMessage(message.toString());
+        this.getView().displayMessage(message.toString());*/
+    	
+    	//this.getView().creationLevel(this.getModel().creationLevel());
+    	this.getView().creationLevel(this.getModel().newMapLoading());
+    	checkKeyType();
+    	
+    	  	
     }
 
     /**
@@ -73,4 +80,53 @@ public class ControllerFacade implements IController {
     public IModel getModel() {
         return this.model;
     }
+    
+    
+    /**
+     * MY CODE
+     */
+    public void checkKeyType()
+    {
+    	int keyType;
+    	while( 1 == 1)
+    	{
+    		
+    		keyType = this.getView().getKey();
+    		
+    		//Up
+    		if (keyType == 90)
+    		{
+    			System.out.println("Up");
+    			this.getView().printScreen(this.getModel().up());
+    			
+    		}
+    		//Down
+    		else if (keyType == 83)
+    		{
+    			System.out.println("Down");
+    			this.getView().printScreen(this.getModel().down());
+    			
+    		}
+    		//Left
+    		else if (keyType == 81)
+    		{
+    			System.out.println("Left");
+    			this.getView().printScreen(this.getModel().left());
+    			
+    		}
+    		//Right
+    		else if (keyType == 68)
+    		{
+    			System.out.println("Right");
+    			this.getView().printScreen(this.getModel().right());
+    			
+    		}
+    		
+    		this.getView().updateScore(this.getModel().getScore());
+    	}
+    }
+
+    
+    
+    
 }
