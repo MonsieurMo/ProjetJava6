@@ -28,10 +28,10 @@ DELIMITER $$
 SELECT *
 FROM lvl3$$
 
-CREATE PROCEDURE findLvl3ById (IN ligne INT)  NO SQL
+CREATE PROCEDURE findLvl3ByLigne (IN ligne INT)  NO SQL
 SELECT *
 FROM lvl3
-WHERE lvl3.ligne = id$$ 
+WHERE lvl3.ligne = ligne$$ 
 
 /* NE FONCTIONNE PAS 
 CREATE PROCEDURE findLvl1ByName (IN colonne1 varchar(255), colonne2 varchar(255), colonne3 varchar(255), colonne4 varchar(255), colonne5 varchar(255), colonne6 varchar(255), colonne7 varchar(255), colonne8 varchar(255), colonne9 varchar(255), colonne10 varchar(255), colonne11 varchar(255), colonne12 varchar(255),colonne13 varchar(255), colonne14 varchar(255), colonne15 varchar(255),colonne16 varchar(255), colonne17 varchar(255), colonne18 varchar(255),colonne19 varchar(255), colonne20 varchar(255), colonne21 varchar(255),colonne22 varchar(255), colonne23 varchar(255), colonne24 varchar(255), colonne25 varchar(255), colonne26 varchar(255), colonne27 varchar(255), colonne28 varchar(255), colonne29 varchar(255), colonne30 varchar(255))  NO SQL

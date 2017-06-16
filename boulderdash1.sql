@@ -28,7 +28,7 @@ DELIMITER $$
 SELECT *
 FROM lvl1$$
 
-CREATE PROCEDURE findLvl1ById (IN ligne INT)  NO SQL
+CREATE PROCEDURE findLvl1ByLigne (IN ligne INT)  NO SQL
 SELECT *
 FROM lvl1
 WHERE lvl1.ligne = ligne$$ 
