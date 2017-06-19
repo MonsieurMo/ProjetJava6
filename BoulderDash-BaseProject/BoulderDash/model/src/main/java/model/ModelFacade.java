@@ -1,4 +1,9 @@
 package model;
+import java.sql.CallableStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -103,6 +108,24 @@ public class ModelFacade implements IModel {
     
     public int[][] newMapLoading() throws SQLException
     {    		
+    	try {
+    	      //Class.forName("org.postgresql.Driver");
+    	      System.out.println("Driver O.K.");
+
+    	      String url = "jdbc:postgresql://localhost/boulderdash";
+    	      String user = "postgres";
+    	      String passwd = "postgres";
+
+    	      Connection conn = DriverManager.getConnection(url, user, passwd);
+    	      System.out.println("Connexion effective !");         
+    	         
+    	    } catch (Exception e) {
+    	      e.printStackTrace();
+    	    } 
+    	
+    	
+    	
+    	
     	
     	return this.map;
     }
@@ -260,7 +283,6 @@ public class ModelFacade implements IModel {
                     map[pierreX][pierreY] = 0;
                     pierreY++;
                     map[pierreX][pierreY] = 4;
-
                 }
                 if ((pierreY == 18)&&(map[pierreX][pierreY+1] == 0))
                 {

@@ -24,6 +24,7 @@ public abstract class Main {
     	Music music = new Music();
         music.start();
         
+        
         final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
 
         try {

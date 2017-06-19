@@ -42,5 +42,6 @@ public abstract class AbstractDAO {
      */
     protected static CallableStatement prepareCall(final String query) {
         return BoulderDashBDDConnector.getInstance().prepareCall(query);
+        
     }
 }

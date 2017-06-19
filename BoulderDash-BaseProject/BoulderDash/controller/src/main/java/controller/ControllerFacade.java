@@ -43,21 +43,11 @@ public class ControllerFacade implements IController {
      */
     public void start() throws SQLException {
     	
-    	/*this.getView().displayMessage(this.getModel().getExampleById(1).toString());
-
-        this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
-
-        final List<Example> examples = this.getModel().getAllExamples();
-        final StringBuilder message = new StringBuilder();
-        // a.append(" bar);
-        for (final Example example : examples) {
-            message.append(example);
-            message.append('\n');
-        }
-        this.getView().displayMessage(message.toString());*/
     	
-    	//this.getView().creationLevel(this.getModel().creationLevel());
-    	this.getView().creationLevel(this.getModel().newMapLoading());
+    	//this.getView().displayMessage(this.getModel().getExampleById(1).toString());
+    	//this.getModel().newMapLoading();
+    	this.getView().creationLevel(this.getModel().creationLevel());
+    	//this.getView().creationLevel(this.getModel().newMapLoading());
     	checkKeyType();
     	
     	  	
@@ -97,32 +87,39 @@ public class ControllerFacade implements IController {
     		if (keyType == 90)
     		{
     			System.out.println("Up");
-    			this.getView().printScreen(this.getModel().up());
+    			this.getView().printScreen(this.getModel().up(),"UP");
     			
     		}
     		//Down
     		else if (keyType == 83)
     		{
     			System.out.println("Down");
-    			this.getView().printScreen(this.getModel().down());
+    			this.getView().printScreen(this.getModel().down(),"UP");
     			
     		}
     		//Left
     		else if (keyType == 81)
     		{
     			System.out.println("Left");
-    			this.getView().printScreen(this.getModel().left());
+    			this.getView().printScreen(this.getModel().left(),"LEFT");
     			
     		}
     		//Right
     		else if (keyType == 68)
     		{
     			System.out.println("Right");
-    			this.getView().printScreen(this.getModel().right());
+    			this.getView().printScreen(this.getModel().right(),"RIGHT");
     			
     		}
     		
     		this.getView().updateScore(this.getModel().getScore());
+    		
+    		try {
+				Thread.sleep(20);//A little delay 
+			} catch (InterruptedException e) {
+				
+				e.printStackTrace();
+			}
     	}
     }
 

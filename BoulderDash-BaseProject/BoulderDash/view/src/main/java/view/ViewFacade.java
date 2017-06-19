@@ -23,7 +23,7 @@ public class ViewFacade extends JFrame implements IView,KeyListener {
     	
     	this.setFocusable(true);
 
-        this.setTitle("Score : ");
+        this.setTitle("Score : 0");
         this.setSize(980,680);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -111,7 +111,7 @@ public class ViewFacade extends JFrame implements IView,KeyListener {
     	this.setTitle("Score : " + score);
     }
     
-    public void printScreen(int[][] map)
+    public void printScreen(int[][] map,String pos)
     {
     	int x = 0,y=0;
         for (int i = 0;i<30;i++)
@@ -121,7 +121,14 @@ public class ViewFacade extends JFrame implements IView,KeyListener {
                 
                 if (map[i][j] == 8)
                 {
-                	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\caracter.png"));
+                	if (pos == "UP")
+                		block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\caracter.png"));
+                	else if (pos == "LEFT")
+                		block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\LEFT.png"));
+                	else if (pos == "RIGHT")
+                		block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\RIGHT.png"));
+                	else 
+                		block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\caracter.png"));
                 }
                 if (map[i][j] == 0)
                 {

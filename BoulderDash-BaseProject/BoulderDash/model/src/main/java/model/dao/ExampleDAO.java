@@ -15,6 +15,9 @@ import model.Example;
  * @version 1.0
  */
 public abstract class ExampleDAO extends AbstractDAO {
+	
+	 /** Loading level. */
+    private static String sqlLevelLoading   = "{call findLvl1ByLigne()}";
 
     /** The sql example by id. */
     private static String sqlExampleById   = "{call findExampleById(?)}";
@@ -47,7 +50,7 @@ public abstract class ExampleDAO extends AbstractDAO {
         if (callStatement.execute()) {
             final ResultSet result = callStatement.getResultSet();
             if (result.first()) {
-                example = new Example(result.getInt(idColumnIndex), result.getString(nameColumnIndex));
+                example = new Example(result.getInt(idColumnIndex), result.getString(nameColumnIndex));             
             }
             result.close();
         }
@@ -98,4 +101,6 @@ public abstract class ExampleDAO extends AbstractDAO {
         }
         return examples;
     }
+    
+   
 }
