@@ -46,8 +46,8 @@ public class ControllerFacade implements IController {
     	
     	//this.getView().displayMessage(this.getModel().getExampleById(1).toString());
     	//this.getModel().newMapLoading();
-    	this.getView().creationLevel(this.getModel().creationLevel());
-    	//this.getView().creationLevel(this.getModel().newMapLoading());
+    	//this.getView().creationLevel(this.getModel().creationLevel());
+    	this.getView().creationLevel(this.getModel().newMapLoading());
     	checkKeyType();
     	
     	  	

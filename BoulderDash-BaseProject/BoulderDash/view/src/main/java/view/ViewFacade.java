@@ -91,7 +91,11 @@ public class ViewFacade extends JFrame implements IView,KeyListener {
                 if (map[i][j] == 4)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\stone.png"));
-                }             
+                }
+                if (map[i][j] == 5)
+                {
+                	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\bedrock.png"));
+                }
                 panel.add(block[i][j]);
                 y +=32;
             }
@@ -145,7 +149,11 @@ public class ViewFacade extends JFrame implements IView,KeyListener {
                 if (map[i][j] == 4)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\stone.png"));
-                }             
+                }
+                if (map[i][j] == 5)
+                {
+                	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\bedrock.png"));
+                } 
                 y +=32;
             }
             x += 32;

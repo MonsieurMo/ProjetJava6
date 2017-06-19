@@ -1,7 +1,9 @@
 package model;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -109,16 +111,33 @@ public class ModelFacade implements IModel {
     public int[][] newMapLoading() throws SQLException
     {    		
     	try {
-    	      //Class.forName("org.postgresql.Driver");
-    	      System.out.println("Driver O.K.");
 
-    	      String url = "jdbc:postgresql://localhost/boulderdash";
-    	      String user = "postgres";
-    	      String passwd = "postgres";
+    	      String URL = "jdbc:mysql://localhost/boulderdash";
+    	      String LOGIN = "root";
+    	      String PASSWORD = "";
 
-    	      Connection conn = DriverManager.getConnection(url, user, passwd);
-    	      System.out.println("Connexion effective !");         
-    	         
+    	      Connection conn = DriverManager.getConnection(URL, LOGIN, PASSWORD); //Connexion to the dataBase
+    	      System.out.println("Conexion to Data Base ready !");
+    	      
+    	      Statement state = conn.createStatement();
+    	      ResultSet result = state.executeQuery("SELECT * FROM lvl1");
+    	      ResultSetMetaData resultMeta = result.getMetaData();
+    	      
+    	      result.next();
+    	        for (int j = 0;j<20;j++)
+    	        {
+    	            for (int i = 0;i<30;i++)
+    	            {    	          	                
+    	                map[i][j] =  Integer.parseInt(result.getObject(i+2).toString());
+    	                if (Integer.parseInt(result.getObject(i+2).toString()) == 8)
+    	                {
+    	                	pX = i;
+    	                	pY = j;
+    	                }
+    	            }
+    	            result.next();
+    	        }
+    	         	         
     	    } catch (Exception e) {
     	      e.printStackTrace();
     	    } 
@@ -149,7 +168,7 @@ public class ModelFacade implements IModel {
     {
     	if (pY > 0)
         {
-            if (map[pX][pY-1] != 4)
+            if ((map[pX][pY-1] != 4)&&(map[pX][pY-1] != 5))
             {
                 //Si diamant
                 if (map[pX][pY-1] == 3)
@@ -171,7 +190,7 @@ public class ModelFacade implements IModel {
     {
     	if (pY < 19)
         {
-            if (map[pX][pY+1] != 4)
+            if ((map[pX][pY+1] != 4)&&(map[pX][pY+1] != 5))
             {
                 //Si diamant
                 if (map[pX][pY+1] == 3)
@@ -220,7 +239,7 @@ public class ModelFacade implements IModel {
     {
     	if (pX > 0)
         {
-            if (map[pX-1][pY] != 4)
+            if ((map[pX-1][pY] != 4)&&(map[pX-1][pY] != 5))
             {
                 //Si diamant
                 if (map[pX-1][pY] == 3)
@@ -245,7 +264,7 @@ public class ModelFacade implements IModel {
     {
     	if (pX < 29)
         {
-            if (map[pX+1][pY] != 4)
+            if ((map[pX+1][pY] != 4)&&(map[pX+1][pY] != 5))
             {
                 //Si diamant
                 if (map[pX+1][pY] == 3)
