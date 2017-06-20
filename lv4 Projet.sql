@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 12 Juin 2017 à 20:25
+-- GÃ©nÃ©rÃ© le :  Lun 12 Juin 2017 Ã  20:25
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -17,21 +17,21 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  'boulderdash'
+-- Base de donnÃ©es :  'boulderdash'
 --
 
 DELIMITER $$
 --
--- Procédures
+-- ProcÃ©dures
 --
  CREATE PROCEDURE findAllLevels ()  NO SQL
 SELECT *
 FROM lvl4$$
 
-CREATE PROCEDURE findLvl4ById (IN ligne INT)  NO SQL
+CREATE PROCEDURE findLvl4ByLigne (IN ligne INT)  NO SQL
 SELECT *
 FROM lvl4
-WHERE lvl4.ligne = id$$ 
+WHERE lvl4.ligne = ligne$$ 
 
 /* NE FONCTIONNE PAS 
 CREATE PROCEDURE findLvl1ByName (IN colonne1 varchar(255), colonne2 varchar(255), colonne3 varchar(255), colonne4 varchar(255), colonne5 varchar(255), colonne6 varchar(255), colonne7 varchar(255), colonne8 varchar(255), colonne9 varchar(255), colonne10 varchar(255), colonne11 varchar(255), colonne12 varchar(255),colonne13 varchar(255), colonne14 varchar(255), colonne15 varchar(255),colonne16 varchar(255), colonne17 varchar(255), colonne18 varchar(255),colonne19 varchar(255), colonne20 varchar(255), colonne21 varchar(255),colonne22 varchar(255), colonne23 varchar(255), colonne24 varchar(255), colonne25 varchar(255), colonne26 varchar(255), colonne27 varchar(255), colonne28 varchar(255), colonne29 varchar(255), colonne30 varchar(255))  NO SQL
@@ -89,18 +89,20 @@ CREATE TABLE lvl4 (
 
 INSERT INTO lvl4 (ligne, colonne1, colonne2, colonne3, colonne4, colonne5, colonne6, colonne7, colonne8, colonne9, colonne10, colonne11, colonne12,colonne13, colonne14, colonne15,colonne16, colonne17, colonne18,colonne19, colonne20, colonne21,colonne22, colonne23, colonne24, colonne25, colonne26, colonne27, colonne28, colonne29, colonne30) VALUES
 (1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5),
-(2, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
-(3, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
-(4, 5, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 5, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
-(5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
-(6, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 3, 3, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
-(7, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 4, 4, 4, 4, 4, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
-(8, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 4, 4, 4, 4, 4, 4, 4, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1 ,1, 1, 5),
-(10, 5, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
-(11, 5, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
-(12, 5, 1, 1, 1, 1, 1, 5, 3, 5, 1, 1, 1, 4, 4, 1, 1, 1, 1, 1, 4, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5),
-(13, 5, 1, 1, 1, 1, 5, 1, 1, 1, 5, 2, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 5),
-(14, 5, 1, 8, 1, 5, 1, 1, 4, 1, 1, 5, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1, 1, 5, 1, 1, 1, 1, 1, 1, 5),
+(2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(4, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
+(5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
+(6, 5, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 5, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
+(7, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
+(8, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 3, 3, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
+(9, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 4, 4, 4, 4, 4, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
+(10, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5, 4, 4, 4, 4, 4, 4, 4, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1 ,1, 1, 5),
+(11, 5, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
+(12, 5, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5),
+(13, 5, 1, 1, 1, 1, 1, 5, 3, 5, 1, 1, 1, 4, 4, 1, 1, 1, 1, 1, 4, 5, 1, 1, 1, 1, 1, 1, 1, 1, 5),
+(14, 5, 1, 1, 1, 1, 5, 1, 1, 1, 5, 2, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 5),
+(15, 5, 1, 8, 1, 5, 1, 1, 4, 1, 1, 5, 1, 1, 1, 1, 1, 1, 4, 4, 4, 1, 1, 5, 1, 1, 1, 1, 1, 1, 5),
 (16, 5, 1, 1, 5, 3, 1, 4, 4, 4, 1, 1, 5, 1, 1, 1, 1, 1, 4, 1, 4, 1, 1, 1, 5, 2, 1, 1, 1, 1, 5),
 (17, 5, 1, 5, 1, 1, 4, 4, 4, 4, 4, 1, 1, 5, 1, 1, 1, 1, 4, 3, 4, 1, 1, 1, 1, 5, 2, 1, 1, 1, 5),
 (18, 5, 5, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 5, 2, 1, 1, 4, 4, 4, 1, 1, 1, 1, 1, 5, 1, 1, 1, 5),
@@ -108,7 +110,7 @@ INSERT INTO lvl4 (ligne, colonne1, colonne2, colonne3, colonne4, colonne5, colon
 (20, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5);
 
 --
--- Index pour les tables exportées
+-- Index pour les tables exportÃ©es
 --
 
 --
@@ -118,7 +120,7 @@ ALTER TABLE lvl4
   ADD PRIMARY KEY (ligne);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT pour les tables exportÃ©es
 --
 
 --
