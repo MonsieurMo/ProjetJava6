@@ -6,6 +6,11 @@ import javax.swing.JLabel;
 
 public class printer extends JFrame {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public static JLabel[][] creation(int[][] map,int pX,int pY,JLabel[][] block){
     	System.out.println("Loading Texture...");
     	int x = 0,y=0,w = 0,v = 0,floor = 0;//Creation of variables

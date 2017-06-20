@@ -4,7 +4,6 @@ import javax.swing.*;
 
 import java.awt.event.KeyEvent;//For KeyEvent
 import java.awt.event.KeyListener;//For KeyListener
-import  java.lang.ArrayIndexOutOfBoundsException;
 import view.printer;
 
 /**
@@ -15,6 +14,11 @@ import view.printer;
  */
 public class ViewFacade extends JFrame implements IView,KeyListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	//SET THE ATTRIBUTES
     JPanel panel = new JPanel(); //Creation of panel
     JLabel[][] block = new JLabel[30][20]; //creation of the board who stock the sprites
@@ -29,22 +33,20 @@ public class ViewFacade extends JFrame implements IView,KeyListener {
         System.out.println("Création of window...");  	
     	this.setFocusable(true);
         this.setTitle("Score : 0");//Set of title
-        this.setSize(496,519);//Set of the size
+        this.setSize(486,509);//Set of the size
         this.setLocationRelativeTo(null);//Spawn the frame at the center of the screen
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Now the bouton exit , end the program.
         this.setResizable(false);//The frame is not Resizable
         this.setContentPane(panel);//ADD the panel at the frame
         panel.setLayout(null);//Set the layout at null for use a personaly layout panel.   
         this.setVisible(true);//The frame is now visible for the user
-        
         for (int i=0;i<15;i++){
         	int j = 0;
         	for (j = 0;j<15;j++)
         	{block[i][j] = new JLabel();//Creation of the item of the screen.
         	panel.add(block[i][j]);}}//Add the item in the panel
     }
-    
-    
+        
     public void creationLevel(int[][] map,int pX, int pY)//Take the map and assign the texture
     {
     	block = printer.creation(map, pX, pY,block);

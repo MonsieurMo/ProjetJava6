@@ -1,9 +1,6 @@
 package controller;
 
 import java.sql.SQLException;
-import java.util.List;
-
-import model.Example;
 import model.IModel;
 import view.IView;
 
@@ -70,55 +67,19 @@ public class ControllerFacade implements IController {
     /**
      * MY CODE
      */
-    public void checkKeyType()
-    {
+    public void checkKeyType(){
     	int keyType;
-    	while( 1 == 1)
-    	{
-    		
+    	while( 1 == 1){		
     		keyType = this.getView().getKey();
-    		
-    		//Up
-    		if (keyType == 90)
-    		{
-    			System.out.println("Up");
-    			this.getView().printScreen(this.getModel().up(),"UP",this.getModel().getpX(),this.getModel().getpY());
-    			
-    		}
-    		//Down
-    		else if (keyType == 83)
-    		{
-    			System.out.println("Down");
-    			this.getView().printScreen(this.getModel().down(),"UP",this.getModel().getpX(),this.getModel().getpY());
-    			
-    		}
-    		//Left
-    		else if (keyType == 81)
-    		{
-    			System.out.println("Left");
-    			this.getView().printScreen(this.getModel().left(),"LEFT",this.getModel().getpX(),this.getModel().getpY());
-    			
-    		}
-    		//Right
-    		else if (keyType == 68)
-    		{
-    			System.out.println("Right");
-    			this.getView().printScreen(this.getModel().right(),"RIGHT",this.getModel().getpX(),this.getModel().getpY());
-    			
-    		}
+    		if (keyType == 90) this.getView().printScreen(this.getModel().up(),"UP",this.getModel().getpX(),this.getModel().getpY());
+    		else if (keyType == 83) this.getView().printScreen(this.getModel().down(),"UP",this.getModel().getpX(),this.getModel().getpY());
+    		else if (keyType == 81) this.getView().printScreen(this.getModel().left(),"LEFT",this.getModel().getpX(),this.getModel().getpY());
+    		else if (keyType == 68) this.getView().printScreen(this.getModel().right(),"RIGHT",this.getModel().getpX(),this.getModel().getpY());
     		
     		this.getView().updateScore(this.getModel().getScore());
     		
-    		try {
-				Thread.sleep(20);//A little delay 
-			} catch (InterruptedException e) {
-				
-				e.printStackTrace();
-			}
-    	}
+    		try { Thread.sleep(20);}//A little delay
+    		catch (InterruptedException e){ e.printStackTrace();}}
     }
-
-    
-    
-    
+ 
 }

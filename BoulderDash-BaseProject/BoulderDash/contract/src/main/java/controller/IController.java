@@ -1,6 +1,5 @@
 package controller;
 
-import java.sql.SQLException;
 
 /**
  * <h1>The Interface IController.</h1>

@@ -15,9 +15,6 @@ import model.Example;
  * @version 1.0
  */
 public abstract class ExampleDAO extends AbstractDAO {
-	
-	 /** Loading level. */
-    private static String sqlLevelLoading   = "{call findLvl1ByLigne()}";
 
     /** The sql example by id. */
     private static String sqlExampleById   = "{call findExampleById(?)}";
