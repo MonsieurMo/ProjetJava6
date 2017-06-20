@@ -35,7 +35,10 @@ public class Movement {
                     game.score ++;}
                 game.map[game.pX][game.pY] = 0;//Caracter move
                 game.pX--;
-                game.map[game.pX][game.pY] = 8;}          
+                game.map[game.pX][game.pY] = 8;}
+            if ((game.map[game.pX-1][game.pY] == 4)&&(game.map[game.pX-2][game.pY] == 0)){
+            	game.map[game.pX-2][game.pY] = 4;game.map[game.pX][game.pY] = 0;game.pX--;game.map[game.pX][game.pY] = 8;
+            	Update.updateStone(game.pX-1,game.pY,game);}//When the case behind the stop is a tunnel the caracter push
             if (game.map[game.pX+1][game.pY-1] == 4){//If stone at the top of the last position of player : 
             	Update.updateStone(game.pX+1,game.pY-1,game);}            
             if (game.map[game.pX+1][game.pY-1] == 3){//If diamond at the top of the last position of player : 
@@ -49,7 +52,10 @@ public class Movement {
                     game.score ++;}
                 game.map[game.pX][game.pY] = 0;//The caracter moove
                 game.pX++;
-                game.map[game.pX][game.pY] = 8;}           
+                game.map[game.pX][game.pY] = 8;}
+            if ((game.map[game.pX+1][game.pY] == 4)&&(game.map[game.pX+2][game.pY] == 0)){
+            	game.map[game.pX+2][game.pY] = 4;game.map[game.pX][game.pY] = 0;game.pX++;game.map[game.pX][game.pY] = 8;
+            	Update.updateStone(game.pX+1,game.pY,game);}//When the case behind the stone is a tunnel the caracter push the stone            
             if (game.map[game.pX-1][game.pY-1] == 4){
             	Update.updateStone(game.pX-1,game.pY-1,game);}
             if (game.map[game.pX-1][game.pY-1] == 3){
