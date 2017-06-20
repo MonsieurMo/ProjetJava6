@@ -5,6 +5,8 @@ import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import  java.lang.ArrayIndexOutOfBoundsException;
+
 /**
  * <h1>The Class ViewFacade provides a facade of the View component.</h1>
  *
@@ -24,7 +26,7 @@ public class ViewFacade extends JFrame implements IView,KeyListener {
     	this.setFocusable(true);
 
         this.setTitle("Score : 0");
-        this.setSize(980,680);
+        this.setSize(496,519);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(true);
@@ -60,45 +62,58 @@ public class ViewFacade extends JFrame implements IView,KeyListener {
     private int keyType;
     private boolean Press = false;
     
-    public void creationLevel(int[][] map)//Take the map and assign the texture
+    public void creationLevel(int[][] map,int pX, int pY)//Take the map and assign the texture
     {
     	//ASssign the texture
     	System.out.println("Loading Texture...");
     	int x = 0,y=0;
-        for (int i = 0;i<30;i++)
+    	int w = 0, v = 0;
+    	int floor;
+        for (int i = 0;i<15;i++)
         {
-            for (int j = 0;j<20;j++)
+            for (int j = 0;j<15;j++)
             {
-                
+            	try
+            	{
+            		floor = map[w+pX-7][v+pY-7];//Lecture du block impossible
+            	}
+            	catch(ArrayIndexOutOfBoundsException e)
+            	{
+            		floor = 1;
+            	}
+            	
                 block[i][j] = new JLabel();
                 block[i][j].setBounds(x,y,32,32);
-                if (map[i][j] == 8)
+                if (floor == 8)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\caracter.png"));
                 }
-                if (map[i][j] == 0)
+                if (floor == 0)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\noir.png"));
                 }
-                if (map[i][j] == 1)
+                if (floor == 1)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\dirt.png"));
                 }
-                if (map[i][j] == 3)
+                if (floor == 3)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\diamant.png"));
                 }
-                if (map[i][j] == 4)
+                if (floor == 4)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\stone.png"));
                 }
-                if (map[i][j] == 5)
+                if (floor == 5)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\bedrock.png"));
                 }
                 panel.add(block[i][j]);
                 y +=32;
+                v++;
             }
+            w++;
+            v = 0;
             x += 32;
             y = 0;
         }
@@ -115,15 +130,23 @@ public class ViewFacade extends JFrame implements IView,KeyListener {
     	this.setTitle("Score : " + score);
     }
     
-    public void printScreen(int[][] map,String pos)
+    public void printScreen(int[][] map,String pos,int pX,int pY)
     {
-    	int x = 0,y=0;
-        for (int i = 0;i<30;i++)
+    	int floor;
+    	int w = 0, v = 0;
+        for (int i = 0;i<15;i++)
         {
-            for (int j = 0;j<20;j++)
+            for (int j = 0;j<15;j++)
             {
-                
-                if (map[i][j] == 8)
+            	try
+            	{
+            		floor = map[w+pX-7][v+pY-7];//Lecture du block impossible
+            	}
+            	catch(ArrayIndexOutOfBoundsException e)
+            	{
+            		floor = 1;
+            	}
+                if (floor == 8)
                 {
                 	if (pos == "UP")
                 		block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\caracter.png"));
@@ -134,30 +157,31 @@ public class ViewFacade extends JFrame implements IView,KeyListener {
                 	else 
                 		block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\caracter.png"));
                 }
-                if (map[i][j] == 0)
+                if (floor == 0)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\noir.png"));
                 }
-                if (map[i][j] == 1)
+                if (floor == 1)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\dirt.png"));
                 }
-                if (map[i][j] == 3)
+                if (floor == 3)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\diamant.png"));
                 }
-                if (map[i][j] == 4)
+                if (floor == 4)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\stone.png"));
                 }
-                if (map[i][j] == 5)
+                if (floor == 5)
                 {
                 	block[i][j].setIcon(new ImageIcon("C:\\Users\\Etienne\\Documents\\GITHUB\\ProjetJava6\\textures\\bedrock.png"));
                 } 
-                y +=32;
+                v++;
+                
             }
-            x += 32;
-            y = 0;
+            w++;
+            v = 0;
         }
         this.repaint();
     }
@@ -179,7 +203,7 @@ public class ViewFacade extends JFrame implements IView,KeyListener {
 
     public void keyPressed(KeyEvent e) {
     	this.Press = true;
-    	this.keyType = e.getKeyCode();
+      	this.keyType = e.getKeyCode();
 
        
     }

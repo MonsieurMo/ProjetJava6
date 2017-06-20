@@ -16,9 +16,9 @@ public interface IView {
      */
     void displayMessage(String message);
     
-    void creationLevel(int[][] map);
+    void creationLevel(int[][] map,int pX,int pY);
     
-    void printScreen(int[][] map,String pos);
+    void printScreen(int[][] map,String pos,int pX,int pY);
     
     void updateScore(int score);
     

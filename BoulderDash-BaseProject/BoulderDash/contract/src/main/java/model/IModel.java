@@ -45,7 +45,7 @@ public interface IModel {
     
     
     //Methodes
-    public int[][] creationLevel();
+    public int[][] creationLevel()throws SQLException;
     
     public int[][] getMap();
     
@@ -59,12 +59,15 @@ public interface IModel {
     
     public int[][] right();
     
-    public void updateLeft();
-    
-    public void updateRight();
     
     public int getScore();
    
-    public int[][] newMapLoading() throws SQLException;
+    public int getpX();
+    
+    public int getpY();
+    
+    public void updateStone(int pierreX,int pierreY);
+    
+    public void updateDiamond(int diamondX,int diamondY);
     
 }

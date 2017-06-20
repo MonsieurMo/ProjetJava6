@@ -26,6 +26,10 @@ public class ModelFacade implements IModel {
     int[][] map = new int[30][20];
     int pX =0, pY = 0;
     int score = 0;
+    
+    
+    final String PROCE = "CALL lvl1";
+
 
     /**
      * Instantiates a new model facade.
@@ -70,45 +74,7 @@ public class ModelFacade implements IModel {
     
    
     
-    @Override
-    public int[][] creationLevel()//Return the map with all the element;
-    {
-    	pY = 0;pX = 0;
-    	int x = 0,y=0;
-
-        //Création de la map remplie
-    	System.out.println("Création of the carte...");
-        for (int i = 0;i<30;i++)
-        {
-            for (int j = 0;j<20;j++)
-            {
-                y +=32;
-                
-                map[i][j] = 1;
-            }
-            x += 32;
-            y = 0;
-        }
-        
-      //Init of Player
-        map[0][0] = 8;
-
-        //Set of Diamonds
-        map[10][10] = 3;
-        map[16][7] = 3;
-        map[3][17] = 3;
-
-        //Set of Stone
-        map[12][1] = 4;
-        map[23][15] = 4;
-        map[4][18] = 4;
-        
-        System.out.println("Creation of the map ended");
-        return map;
-    	
-    }
-    
-    public int[][] newMapLoading() throws SQLException
+    public int[][] creationLevel() throws SQLException
     {    		
     	try {
 
@@ -117,10 +83,11 @@ public class ModelFacade implements IModel {
     	      String PASSWORD = "";
 
     	      Connection conn = DriverManager.getConnection(URL, LOGIN, PASSWORD); //Connexion to the dataBase
-    	      System.out.println("Conexion to Data Base ready !");
+    	      System.out.println("Connexion to Data Base ready !");
     	      
     	      Statement state = conn.createStatement();
-    	      ResultSet result = state.executeQuery("SELECT * FROM lvl1");
+    	      ResultSet result = state.executeQuery(PROCE);
+   	      
     	      ResultSetMetaData resultMeta = result.getMetaData();
     	      
     	      result.next();
@@ -137,6 +104,9 @@ public class ModelFacade implements IModel {
     	            }
     	            result.next();
     	        }
+    	        
+    	        result.close();
+    	        state.close();
     	         	         
     	    } catch (Exception e) {
     	      e.printStackTrace();
@@ -251,7 +221,17 @@ public class ModelFacade implements IModel {
                 pX--;
                 map[pX][pY] = 8;
             }
-            updateLeft();
+            
+            //If stone at the top of the last position of player : 
+            if (map[pX+1][pY-1] == 4)
+            {
+            	updateStone(pX+1,pY-1);
+            }
+            
+            if (map[pX+1][pY-1] == 3)
+            {
+            	updateDiamond(pX+1,pY-1);
+            }
         }
     	
     	
@@ -277,7 +257,16 @@ public class ModelFacade implements IModel {
                 map[pX][pY] = 8;
             }
            
-            updateRight();
+            
+            if (map[pX-1][pY-1] == 4)
+            {
+            	updateStone(pX-1,pY-1);
+            }
+            
+            if (map[pX-1][pY-1] == 3)
+            {
+            	updateDiamond(pX-1,pY-1);
+            }
 
         }
     	
@@ -285,100 +274,75 @@ public class ModelFacade implements IModel {
     	
     	return this.map;
     }
-   
-    public void updateLeft()
+
+    public int getpX()
     {
-    	if (pY !=0) //Si le joueur n'est pas en haut de la carte
-        {
-            //Si pierre
-            if  (map[pX+1][pY-1] == 4)
-            {
-
-                //Pierre
-                int pierreX = pX+1,pierreY = pY-1;
-
-                while((map[pierreX][pierreY+1] == 0)&&(pierreY != 18))
-                {
-                    map[pierreX][pierreY] = 0;
-                    pierreY++;
-                    map[pierreX][pierreY] = 4;
-                }
-                if ((pierreY == 18)&&(map[pierreX][pierreY+1] == 0))
-                {
-                	map[pierreX][pierreY] = 0;
-                    pierreY++;
-                    map[pierreX][pierreY] = 4;
-                }
-            }
-
-            //Diamant
-            if  (map[pX+1][pY-1] == 3)
-            {
-                int diamX = pX+1,diamY = pY-1;
-
-                while((map[diamX][diamY+1] == 0)&&(diamY !=18))
-                {
-                    map[diamX][diamY] = 0;
-                    diamY++;
-                    map[diamX][diamY] = 3;
-                }
-                if ((diamY == 18)&&(map[diamX][diamY+1] == 0))
-                {
-                	map[diamX][diamY] = 0;
-                    diamY++;
-                    map[diamX][diamY] = 3;
-                }
-            }
-        }
+    	return pX;
     }
     
-    public void updateRight()
+    public int getpY()
     {
-    	if (pY != 0)//Si le joueur n'est pas en haut de la carte
-        {
-            //Pierre
-            if  (map[pX-1][pY-1] == 4)
-            {
-                int pierreX = pX-1,pierreY = pY-1;
-
-                while((map[pierreX][pierreY+1] == 0)&&(pierreY != 18))
-                {
-                    map[pierreX][pierreY] = 0;
-                    pierreY++;
-                    map[pierreX][pierreY] = 4;
-                }
-                if ((pierreY == 18)&&(map[pierreX][pierreY+1] == 0))
-                {
-                	map[pierreX][pierreY] = 0;
-                    pierreY++;
-                    map[pierreX][pierreY] = 4;
-                }
-            }
-            
-           //Diamant
-            if  (map[pX-1][pY-1] == 3)
-            {
-
-                int diamX = pX-1,diamY = pY-1;
-
-                while((map[diamX][diamY+1] == 0)&&(diamY !=18))
-                {
-                    map[diamX][diamY] = 0;
-                    diamY++;
-                    map[diamX][diamY] = 3;
-
-                }
-                if ((diamY == 18)&&(map[diamX][diamY+1] == 0))
-                {
-                	map[diamX][diamY] = 0;
-                    diamY++;
-                    map[diamX][diamY] = 3;
-                }
-
-            }
-        }
-    	
+    	return pY;
     }
+
+    public void updateStone(int pierreX,int pierreY)
+    {
+    	int pierreBisX = pierreX;
+    	int pierreBisY = pierreY-1;
+    	while((map[pierreX][pierreY+1] == 0)&&(pierreY != 18))
+        {
+            map[pierreX][pierreY] = 0;
+            pierreY++;
+            map[pierreX][pierreY] = 4;
+        }
+        if ((pierreY == 18)&&(map[pierreX][pierreY+1] == 0))
+        {
+        	map[pierreX][pierreY] = 0;
+            pierreY++;
+            map[pierreX][pierreY] = 4;
+        }
+        
+        if (map[pierreBisX][pierreBisY] == 4)
+        {
+        	updateStone(pierreBisX,pierreBisY);
+        }
+        
+        if (map[pierreBisX][pierreBisY] == 3)
+        {
+        	updateDiamond(pierreBisX,pierreBisY);
+        }
+        
+        
+    }
+    
+    public void updateDiamond(int diamondX,int diamondY)
+    {
+    	int diamondBisX = diamondX;
+    	int diamondBisY = diamondY-1;
+    	while((map[diamondX][diamondY+1] == 0)&&(diamondY != 18))
+        {
+            map[diamondX][diamondY] = 0;
+            diamondY++;
+            map[diamondX][diamondY] = 3;
+        }
+        if ((diamondY == 18)&&(map[diamondX][diamondY+1] == 0))
+        {
+        	map[diamondX][diamondY] = 0;
+        	diamondY++;
+            map[diamondX][diamondY] = 3;
+        }
+        
+        if (map[diamondBisX][diamondBisY] == 4)
+        {
+        	updateStone(diamondBisX,diamondBisY);
+        }
+        
+        if (map[diamondBisX][diamondBisY] == 3)
+        {
+        	updateDiamond(diamondBisX,diamondBisY);
+        }
+    }
+
 
 
 }
