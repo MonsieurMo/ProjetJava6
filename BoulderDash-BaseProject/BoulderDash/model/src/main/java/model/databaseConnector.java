@@ -9,12 +9,12 @@ import java.sql.DriverManager;
 
 public class databaseConnector {
 	
-    final static String PROCE = "CALL lvl1";
+    private final static String PROCE = "CALL lvl1";
+    private final static String URL = "jdbc:mysql://localhost/boulderdash";
+    private final static String LOGIN = "root";
+    private final static String PASSWORD = "";
 	
 	private static Connection connection() throws SQLException{
-		 String URL = "jdbc:mysql://localhost/boulderdash";
-	     String LOGIN = "root";
-	     String PASSWORD = "";
 	     Connection conn = DriverManager.getConnection(URL, LOGIN, PASSWORD); //Connexion to the dataBase
 	     System.out.println("Connexion to Data Base ready !");
 		return  conn;}

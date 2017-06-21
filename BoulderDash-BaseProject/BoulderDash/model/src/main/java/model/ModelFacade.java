@@ -1,5 +1,7 @@
 package model;
 import java.sql.SQLException;
+import java.util.Observable;
+
 import model.Movement;
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
@@ -7,7 +9,7 @@ import model.Movement;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public class ModelFacade implements IModel {
+public class ModelFacade extends Observable implements IModel {
 	
 	 //My Attributs
     public Game game; 

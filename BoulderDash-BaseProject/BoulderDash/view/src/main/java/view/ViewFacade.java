@@ -4,7 +4,11 @@ import javax.swing.*;
 
 import java.awt.event.KeyEvent;//For KeyEvent
 import java.awt.event.KeyListener;//For KeyListener
+import java.util.Observable;
+import java.util.Observer;
+
 import view.printer;
+
 
 /**
  * <h1>The Class ViewFacade provides a facade of the View component.</h1>
@@ -12,7 +16,7 @@ import view.printer;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public class ViewFacade extends JFrame implements IView,KeyListener {
+public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
 
 	/**
 	 * 
@@ -93,4 +97,9 @@ public class ViewFacade extends JFrame implements IView,KeyListener {
     public void keyReleased(KeyEvent e) {
 
     }
+
+    public void update(Observable obs, Object obj) {
+    	
+    }
+
 }

@@ -14,10 +14,8 @@ public class ControllerFacade implements IController {
 
     /** The view. */
     private final IView  view;
-
     /** The model. */
     private final IModel model;
-
     /**
      * Instantiates a new controller facade.
      *
@@ -31,7 +29,6 @@ public class ControllerFacade implements IController {
         this.view = view;
         this.model = model;
     }
-
     /**
      * Start.
      *
@@ -42,9 +39,9 @@ public class ControllerFacade implements IController {
     	
     	this.getView().creationLevel(this.getModel().creationLevel(),this.getModel().getpX(),this.getModel().getpY());
     	checkKeyType();
+    	
     	   	  	
     }
-
     /**
      * Gets the view.
      *
@@ -53,7 +50,6 @@ public class ControllerFacade implements IController {
     public IView getView() {
         return this.view;
     }
-
     /**
      * Gets the model.
      *
@@ -61,9 +57,7 @@ public class ControllerFacade implements IController {
      */
     public IModel getModel() {
         return this.model;
-    }
-    
-    
+    } 
     /**
      * MY CODE
      */
