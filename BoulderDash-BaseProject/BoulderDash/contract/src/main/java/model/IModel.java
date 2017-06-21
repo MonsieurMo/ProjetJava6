@@ -33,5 +33,7 @@ public interface IModel {
     
     public String getStatus();
     
+    public int getStep();
+    
     
 }

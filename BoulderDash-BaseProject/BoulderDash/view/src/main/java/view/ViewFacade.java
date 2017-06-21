@@ -102,16 +102,16 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
     	
     }
     
-    public void updateStatus(String status)
+    public void updateStatus(String status,int step)
     {
     	if (status == "die"){
     		JOptionPane pan = new JOptionPane();
-    		pan.showMessageDialog(null, "Vous etes morts", "Fin de la partie", JOptionPane.ERROR_MESSAGE);
+    		pan.showMessageDialog(null, "You die", "End of the game", JOptionPane.ERROR_MESSAGE);
     		System.exit(0);
     	}
     	if (status == "end"){
     		JOptionPane pan = new JOptionPane();
-    		pan.showMessageDialog(null, "Vous avez collecter 10 diamants, Félicitation !", "Fin de la partie", JOptionPane.INFORMATION_MESSAGE);
+    		pan.showMessageDialog(null, "You collect 10 diamonds, Congratulations !\nWith exactly : " + step + " steps.", "End of the game", JOptionPane.INFORMATION_MESSAGE);
     		System.exit(0);
     	}
     }

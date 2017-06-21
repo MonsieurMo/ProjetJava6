@@ -63,4 +63,9 @@ public class ModelFacade extends Observable implements IModel {
     {
     	return game.status;
     }
+
+    public int getStep()
+    {
+    	return game.step;
+    }
 }

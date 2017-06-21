@@ -71,7 +71,7 @@ public class ControllerFacade implements IController {
     		else if (keyType == 68) this.getView().printScreen(this.getModel().right(),"RIGHT",this.getModel().getpX(),this.getModel().getpY());
     		
     		this.getView().updateScore(this.getModel().getScore());
-    		this.getView().updateStatus(this.getModel().getStatus());
+    		this.getView().updateStatus(this.getModel().getStatus(),this.getModel().getStep());
     		try { Thread.sleep(20);}//A little delay
     		catch (InterruptedException e){ e.printStackTrace();}}
     }

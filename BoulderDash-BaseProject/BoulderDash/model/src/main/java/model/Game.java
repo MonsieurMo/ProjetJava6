@@ -5,6 +5,7 @@ public class Game {
 	public int map[][] = new int[30][20];	
 	public int score = 0;
 	public String status = "";
+	public int step = 0;
 	
 	public int pX,pY;
 	
