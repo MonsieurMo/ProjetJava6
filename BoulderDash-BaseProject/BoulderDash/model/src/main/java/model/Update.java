@@ -37,10 +37,12 @@ public class Update {
         if  (game.map[game.pX][game.pY-2] == 4){//IF stone at the top
             game.map[game.pX][game.pY-2] = 0;
             game.map[game.pX][game.pY-1] = 4;
+            game.status = "die";
             }//END OF THE GAME
         if  (game.map[game.pX][game.pY-2] == 3){//IF diamond at the top
             game.map[game.pX][game.pY-2] = 0;
             game.map[game.pX][game.pY-1] = 3;
+            game.status = "die";
         }//END OF GAME
         return game;}
 }

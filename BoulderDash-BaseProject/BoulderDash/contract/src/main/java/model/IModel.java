@@ -31,5 +31,7 @@ public interface IModel {
     
     public int getpY();
     
+    public String getStatus();
+    
     
 }

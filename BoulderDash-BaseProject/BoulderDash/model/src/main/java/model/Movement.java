@@ -10,7 +10,8 @@ public class Movement {
 		if (game.pY > 0){
             if ((game.map[game.pX][game.pY-1] != 4)&&(game.map[game.pX][game.pY-1] != 5)){
                 if (game.map[game.pX][game.pY-1] == 3){//If a diamond is in front of
-                	game.score ++;}
+                	game.score ++;
+                	if (game.score > 9) game.status = "end";}
                 game.map[game.pX][game.pY] = 0;//The caracter moove up
                 game.pY--;
                 game.map[game.pX][game.pY] = 8;}}
@@ -20,7 +21,8 @@ public class Movement {
 		if (game.pY < 19){
             if ((game.map[game.pX][game.pY+1] != 4)&&(game.map[game.pX][game.pY+1] != 5)){
                 if (game.map[game.pX][game.pY+1] == 3){//If a diamond is bellow
-                	game.score ++;}
+                	game.score ++;
+                	if (game.score > 9) game.status = "end";}
                 game.map[game.pX][game.pY] = 0;//The caracter move
                 game.pY++;
                 game.map[game.pX][game.pY] = 8;}
@@ -32,7 +34,8 @@ public class Movement {
     	if (game.pX > 0){
             if ((game.map[game.pX-1][game.pY] != 4)&&(game.map[game.pX-1][game.pY] != 5)){
                 if (game.map[game.pX-1][game.pY] == 3){ //IF DIAMOND
-                    game.score ++;}
+                    game.score ++;
+                    if (game.score > 9) game.status = "end";}
                 game.map[game.pX][game.pY] = 0;//Caracter move
                 game.pX--;
                 game.map[game.pX][game.pY] = 8;}
@@ -49,7 +52,8 @@ public class Movement {
 			if (game.pX < 29){
             if ((game.map[game.pX+1][game.pY] != 4)&&(game.map[game.pX+1][game.pY] != 5)){
                 if (game.map[game.pX+1][game.pY] == 3){ //IF diamond
-                    game.score ++;}
+                    game.score ++;
+                    if (game.score > 9) game.status = "end";}
                 game.map[game.pX][game.pY] = 0;//The caracter moove
                 game.pX++;
                 game.map[game.pX][game.pY] = 8;}

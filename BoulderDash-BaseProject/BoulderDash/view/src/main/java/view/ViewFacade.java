@@ -101,5 +101,19 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
     public void update(Observable obs, Object obj) {
     	
     }
+    
+    public void updateStatus(String status)
+    {
+    	if (status == "die"){
+    		JOptionPane pan = new JOptionPane();
+    		pan.showMessageDialog(null, "Vous etes morts", "Fin de la partie", JOptionPane.ERROR_MESSAGE);
+    		System.exit(0);
+    	}
+    	if (status == "end"){
+    		JOptionPane pan = new JOptionPane();
+    		pan.showMessageDialog(null, "Vous avez collecter 10 diamants, Félicitation !", "Fin de la partie", JOptionPane.INFORMATION_MESSAGE);
+    		System.exit(0);
+    	}
+    }
 
 }

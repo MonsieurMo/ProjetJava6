@@ -24,6 +24,8 @@ public interface IView {
     
     int getKey();
     
+    void updateStatus(String status);
+    
 
     
 }

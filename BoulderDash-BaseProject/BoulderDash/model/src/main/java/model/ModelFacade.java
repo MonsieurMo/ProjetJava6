@@ -58,4 +58,9 @@ public class ModelFacade extends Observable implements IModel {
     
     public int getpY(){
     	return game.getpY();}
+
+    public String getStatus()
+    {
+    	return game.status;
+    }
 }
