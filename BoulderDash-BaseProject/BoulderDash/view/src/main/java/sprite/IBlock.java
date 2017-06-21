@@ -10,6 +10,7 @@ public abstract class IBlock {
 	protected Sprite tunnel = new TunnelSprite();
 	protected Sprite up = new UpSprite();
 	protected Sprite wall = new WallSprite();
+	protected Sprite monster1 = new Monster1Sprite();
 	
 	public IBlock(){}
 	
@@ -51,6 +52,11 @@ public abstract class IBlock {
 	public String getWall()
 	{
 		return wall.sprite();
+	}
+	
+	public String getMonster1()
+	{
+		return monster1.sprite();
 	}
 
 	

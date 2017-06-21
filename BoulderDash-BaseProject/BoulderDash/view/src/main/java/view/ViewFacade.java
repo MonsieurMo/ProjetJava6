@@ -89,8 +89,7 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
     public void keyReleased(KeyEvent e) {
 
     }
-    public void update(Observable obs, Object obj) {
-    	
+    public void update(Observable obs, Object obj) {    	
     }   
     public void updateStatus(String status,int step){
     	if (status == "die"){JOptionPane pan = new JOptionPane();pan.showMessageDialog(null, "You die", "End of the game", JOptionPane.ERROR_MESSAGE);

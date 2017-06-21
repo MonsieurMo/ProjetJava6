@@ -12,7 +12,8 @@ public class Movement {
                 if (game.map[game.pX][game.pY-1] == 3){//If a diamond is in front of
                 	game.score ++;
                 	if (game.score > 9) game.status = "end";}
-                game.map[game.pX][game.pY] = 0;//The caracter moove up
+                if (game.map[game.pX][game.pY-1] == 2)game.status = "die";//If the character hit a monster
+                game.map[game.pX][game.pY] = 0;//The character move up
                 game.pY--;game.step++;
                 game.map[game.pX][game.pY] = 8;}}
 		return game;}
@@ -23,7 +24,8 @@ public class Movement {
                 if (game.map[game.pX][game.pY+1] == 3){//If a diamond is bellow
                 	game.score ++;
                 	if (game.score > 9) game.status = "end";}
-                game.map[game.pX][game.pY] = 0;//The caracter move
+                if (game.map[game.pX][game.pY+1] == 2)game.status = "die";//If the character hit a monster
+                game.map[game.pX][game.pY] = 0;//The character move
                 game.pY++;game.step++;
                 game.map[game.pX][game.pY] = 8;}
             if (game.pY-1 > 0){
@@ -39,7 +41,8 @@ public class Movement {
                 if (game.map[game.pX-1][game.pY] == 3){ //IF DIAMOND
                     game.score ++;
                     if (game.score > 9) game.status = "end";}
-                game.map[game.pX][game.pY] = 0;//Caracter move
+                if (game.map[game.pX-1][game.pY] == 2)game.status = "die";//If the character hit a monster
+                game.map[game.pX][game.pY] = 0;//Character move
                 game.pX--;game.step++;
                 game.map[game.pX][game.pY] = 8;}
             if (game.map[game.pX+1][game.pY-1] == 4){//If stone at the top of the last position of player : 
@@ -57,7 +60,8 @@ public class Movement {
                 if (game.map[game.pX+1][game.pY] == 3){ //IF diamond
                     game.score ++;
                     if (game.score > 9) game.status = "end";}
-                game.map[game.pX][game.pY] = 0;//The caracter moove
+                if ( game.map[game.pX+1][game.pY]== 2 )game.status = "die";//If a character hit a monster
+                game.map[game.pX][game.pY] = 0;//The character moove
                 game.pX++;game.step++;
                 game.map[game.pX][game.pY] = 8;}           
             if (game.map[game.pX-1][game.pY-1] == 4){
