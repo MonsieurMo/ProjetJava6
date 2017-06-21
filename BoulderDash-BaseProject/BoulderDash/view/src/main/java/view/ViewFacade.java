@@ -6,10 +6,7 @@ import java.awt.event.KeyEvent;//For KeyEvent
 import java.awt.event.KeyListener;//For KeyListener
 import java.util.Observable;
 import java.util.Observer;
-
 import view.printer;
-
-
 /**
  * <h1>The Class ViewFacade provides a facade of the View component.</h1>
  *
@@ -17,18 +14,15 @@ import view.printer;
  * @version 1.0
  */
 public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
-
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 1L;	
 	//SET THE ATTRIBUTES
     JPanel panel = new JPanel(); //Creation of panel
     JLabel[][] block = new JLabel[30][20]; //creation of the board who stock the sprites
     private int keyType;//Creation of the varibales who stock the code of the KeyPressed
-    private boolean Press = false;//Define if a key was pressed recently
-    
+    private boolean Press = false;//Define if a key was pressed recently  
     /**
      * Instantiates a new view facade.
      */
@@ -50,7 +44,7 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
         	{block[i][j] = new JLabel();//Creation of the item of the screen.
         	panel.add(block[i][j]);}}//Add the item in the panel
     }
-        
+     
     public void creationLevel(int[][] map,int pX, int pY)//Take the map and assign the texture
     {
     	block = printer.creation(map, pX, pY,block);
@@ -60,18 +54,18 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
         this.addKeyListener(this);//ADD the Keylistener at the Frame
         this.requestFocus();//Set the focus on the frame
     }
-    
+  
     public void updateScore(int score) //Update the score
     {
     	this.setTitle("Score : " + score);
     }
-    
+  
     public void printScreen(int[][] map,String pos,int pX,int pY)
     {
     	printer.print(map, pX, pY, block,pos);
         this.repaint();
     }
-    
+  
     public int getKey()//Get the Keykode of the last Key pressed when the controller not have an action in traitment
     { 
     	if (this.Press == true)
@@ -82,38 +76,25 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
     	
     	return 0;
     }
-    
+ 
     public void keyTyped(KeyEvent e) {
 
     }
-
     public void keyPressed(KeyEvent e) {//Give the KeyCode of the KeyPressed
     	this.Press = true;
       	this.keyType = e.getKeyCode();
 
        
     }
-
     public void keyReleased(KeyEvent e) {
 
     }
-
     public void update(Observable obs, Object obj) {
     	
-    }
-    
-    public void updateStatus(String status,int step)
-    {
-    	if (status == "die"){
-    		JOptionPane pan = new JOptionPane();
-    		pan.showMessageDialog(null, "You die", "End of the game", JOptionPane.ERROR_MESSAGE);
-    		System.exit(0);
-    	}
-    	if (status == "end"){
-    		JOptionPane pan = new JOptionPane();
-    		pan.showMessageDialog(null, "You collect 10 diamonds, Congratulations !\nWith exactly : " + step + " steps.", "End of the game", JOptionPane.INFORMATION_MESSAGE);
-    		System.exit(0);
-    	}
-    }
-
+    }   
+    public void updateStatus(String status,int step){
+    	if (status == "die"){JOptionPane pan = new JOptionPane();pan.showMessageDialog(null, "You die", "End of the game", JOptionPane.ERROR_MESSAGE);
+    		System.exit(0);}
+    	if (status == "end"){JOptionPane pan = new JOptionPane();pan.showMessageDialog(null, "You collect 10 diamonds, Congratulations !\nWith exactly : " + step + " steps.", "End of the game", JOptionPane.INFORMATION_MESSAGE);
+    		System.exit(0);}}
 }
