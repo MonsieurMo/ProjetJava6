@@ -13,6 +13,7 @@ public class Game {
 	public long time = 0;
 	LinkedList monster2 = new LinkedList<Monster>();
 	LinkedList monster3 = new LinkedList<Monster>();
+	LinkedList monster4 = new LinkedList<Monster>();
 	
 	public Game()
 	{

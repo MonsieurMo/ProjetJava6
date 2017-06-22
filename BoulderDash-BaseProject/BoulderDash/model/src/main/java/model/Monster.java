@@ -5,6 +5,7 @@ public class Monster {
 	private int i1;
 	private int i2;
 	private String direction = "up";
+	private int count = 0;
 	
 	public Monster(int i1, int i2)
 	{
@@ -27,6 +28,11 @@ public class Monster {
 		return this.direction;
 	}
 	
+	public int getCount()
+	{
+		return this.count;
+	}
+	
 	public void setX(int x)
 	{
 		this.i1 = x;
@@ -40,6 +46,11 @@ public class Monster {
 	public void setDirection(String direction)
 	{
 		this.direction = direction;
+	}
+	
+	public void setCount(int count)
+	{
+		this.count = count;
 	}
 	
 

@@ -52,7 +52,7 @@ public class Update {
 	{
 		boolean monster = false;
 		
-		if((block == 2)||(block == 6)||(block == 7))
+		if((block == 2)||(block == 6)||(block == 7)||(block == 9))
 		{
 			return true;
 		}
@@ -81,15 +81,18 @@ public class Update {
 		//Search in the list the ennemy at this position and delete him
 		for(int i = 0; i < game.monster2.size(); i++)//Monster 2 
 		{
-			game.time = System.currentTimeMillis();	
 			Monster monst = (Monster) game.monster2.get(i);
 			if ((x == monst.getX())&&(y == monst.getY())) game.monster2.remove(i);     //Delete this monster of the list
 		}
 		for(int i = 0; i < game.monster3.size(); i++)//Monster 3
 		{
-			game.time = System.currentTimeMillis();	
 			Monster monst = (Monster) game.monster3.get(i);
 			if ((x == monst.getX())&&(y == monst.getY())) game.monster3.remove(i);     //Delete this monster of the list
+		}
+		for(int i = 0; i < game.monster4.size(); i++)//Monster 3
+		{
+			Monster monst = (Monster) game.monster4.get(i);
+			if ((x == monst.getX())&&(y == monst.getY())) game.monster4.remove(i);     //Delete this monster of the list
 		}
 		return game;
 	}

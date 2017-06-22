@@ -55,6 +55,7 @@ public class printer extends JFrame {
                 if (floor == 2){block[i][j].setIcon(new ImageIcon(texture.getMonster1()));}
                 if (floor == 6){block[i][j].setIcon(new ImageIcon(texture.getMonster2()));}
                 if (floor == 7){block[i][j].setIcon(new ImageIcon(texture.getMonster3()));}
+                if (floor == 9){block[i][j].setIcon(new ImageIcon(texture.getMonster4()));}
                 ;v++;}
     		w++;v = 0;}
 		return block;}

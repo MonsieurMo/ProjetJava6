@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 
 public class databaseConnector {
 	
-    private final static String PROCE = "CALL lvl4";
+    private final static String PROCE = "CALL lvl3";
     private final static String URL = "jdbc:mysql://localhost/boulderdash";
     private final static String LOGIN = "root";
     private final static String PASSWORD = "";
