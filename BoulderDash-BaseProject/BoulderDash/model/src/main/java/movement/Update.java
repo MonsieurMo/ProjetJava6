@@ -1,4 +1,7 @@
-package model;
+package movement;
+
+import model.Game;
+import monster.Monster;
 
 public class Update {
 	

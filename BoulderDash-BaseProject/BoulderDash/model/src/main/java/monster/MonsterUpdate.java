@@ -1,11 +1,13 @@
-package model;
+package monster;
 
 import java.util.Random;
+
+import model.Game;
 
 public class MonsterUpdate {
 	
 
-	static Game updateMonster2(Game game){
+	public static Game updateMonster2(Game game){
 			for(int i = 0; i < game.monster2.size(); i++){
 				Monster monst = (Monster) game.monster2.get(i);//Get the mosnter
 				int x = monst.getX();
@@ -18,7 +20,7 @@ public class MonsterUpdate {
 					game.monster2.set(i,monst);}}
 		return game;}
 
-	static Game updateMonster3(Game game){
+	public static Game updateMonster3(Game game){
 		for(int i = 0; i < game.monster3.size(); i++){
 			Monster monst = (Monster) game.monster3.get(i);//Get the mosnter
 			int x = monst.getX();int y = monst.getY();
@@ -37,7 +39,7 @@ public class MonsterUpdate {
 			game.monster3.set(i, monst);}
 		return game;}
 	
-	static Game updateMonster4(Game game)
+	public static Game updateMonster4(Game game)
 	{
 		for(int i = 0; i < game.monster4.size(); i++){
 			Monster monst = (Monster) game.monster4.get(i);
@@ -88,7 +90,7 @@ public class MonsterUpdate {
 	}
 	
 	
-static Game updateMonster(Game game)
+public static Game updateMonster(Game game)
 	{
 		if (game.time + 300 < System.currentTimeMillis() ){
 			game.time = System.currentTimeMillis();
@@ -101,7 +103,7 @@ static Game updateMonster(Game game)
 	}
 
 
-	static Game createMonster4(Game game,String direction)
+	public static Game createMonster4(Game game,String direction)
 	{
 		Random r = new Random();
 		int y = 0 + r.nextInt(100 - 0);
