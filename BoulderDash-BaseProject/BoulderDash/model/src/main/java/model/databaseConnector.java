@@ -26,7 +26,8 @@ public class databaseConnector {
 		    result.next();
 		    for (int j = 0;j<20;j++){
 		            for (int i = 0;i<30;i++){game.map[i][j] =  Integer.parseInt(result.getObject(i+2).toString());
-		            	if (game.map[i][j] == 6) game.monster2.add(new Monster2(i,j));//We add a monster to the list of monster
+		            	if (game.map[i][j] == 6) game.monster2.add(new Monster(i,j));
+		            	if (game.map[i][j] == 7) game.monster3.add(new Monster(i,j));//We add a monster to the list of monster
 		                if (Integer.parseInt(result.getObject(i+2).toString()) == 8){ game.setpX(i); game.setpY(j);}}
 		            result.next();}	        
 		        result.close();

@@ -31,6 +31,7 @@ public class printer extends JFrame {
                 if (floor == 5){block[i][j].setIcon(new ImageIcon(texture.getWall()));}
                 if (floor == 2){block[i][j].setIcon(new ImageIcon(texture.getMonster1()));}
                 if (floor == 6){block[i][j].setIcon(new ImageIcon(texture.getMonster2()));}
+                if (floor == 7){block[i][j].setIcon(new ImageIcon(texture.getMonster3()));}
                 y +=32;v++;}
     		w++;v = 0;x += 32;y = 0;}		
 		return block;}
@@ -53,6 +54,7 @@ public class printer extends JFrame {
                 if (floor == 5){block[i][j].setIcon(new ImageIcon(texture.getWall()));}
                 if (floor == 2){block[i][j].setIcon(new ImageIcon(texture.getMonster1()));}
                 if (floor == 6){block[i][j].setIcon(new ImageIcon(texture.getMonster2()));}
+                if (floor == 7){block[i][j].setIcon(new ImageIcon(texture.getMonster3()));}
                 ;v++;}
     		w++;v = 0;}
 		return block;}

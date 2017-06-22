@@ -12,6 +12,7 @@ public abstract class IBlock {
 	protected Sprite wall = new WallSprite();
 	protected Sprite monster1 = new Monster1Sprite();
 	protected Sprite monster2 = new Monster2Sprite();
+	protected Sprite monster3 = new Monster3Sprite();
 	
 	public IBlock(){}
 	
@@ -63,6 +64,11 @@ public abstract class IBlock {
 	public String getMonster2()
 	{
 		return monster2.sprite();
+	}
+	
+	public String getMonster3()
+	{
+		return monster3.sprite();
 	}
 
 	

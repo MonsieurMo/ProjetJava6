@@ -11,7 +11,8 @@ public class Game {
 	
 	public int pX,pY;
 	public long time = 0;
-	LinkedList monster2 = new LinkedList<Monster2>();
+	LinkedList monster2 = new LinkedList<Monster>();
+	LinkedList monster3 = new LinkedList<Monster>();
 	
 	public Game()
 	{

@@ -52,7 +52,7 @@ public class Update {
 	{
 		boolean monster = false;
 		
-		if((block == 2)||(block == 6))
+		if((block == 2)||(block == 6)||(block == 7))
 		{
 			return true;
 		}
@@ -65,18 +65,33 @@ public class Update {
 
 	public static Game killMonster(Game game,int x,int y)
 	{
-		System.out.println("Kill monster !");
+		deleteMonster(game,x,y);
 		game.map[x][y] = 0;
 		if (game.map[x+1][y] != 2) game.map[x+1][y] = 0;
 		if (game.map[x-1][y] != 2)game.map[x-1][y] = 0;
 		if (game.map[x][y+1] != 2)game.map[x][y+1] = 0;
 		game.map[x][y-1] = 0;
-		if (checkMonster(game,game.map[x+1][y]) == true) killMonster(game,x+1,y);
-		if (checkMonster(game,game.map[x-1][y]) == true) killMonster(game,x-1,y);
+		if (checkMonster(game,game.map[x+1][y]) == true) killMonster(game,x+1,y);if (checkMonster(game,game.map[x-1][y]) == true) killMonster(game,x-1,y);
 		if (checkMonster(game,game.map[x][y+1]) == true) killMonster(game,x,y+1);
-		//updateDiamond(x-1,y,game);
-		//updateDiamond(x+1,y,game);
-		//updateDiamond(x,y+1,game);	
-			return game;
+			return game;}
+
+
+	public static Game deleteMonster(Game game,int x,int y)
+	{
+		//Search in the list the ennemy at this position and delete him
+		for(int i = 0; i < game.monster2.size(); i++)//Monster 2 
+		{
+			game.time = System.currentTimeMillis();	
+			Monster monst = (Monster) game.monster2.get(i);
+			if ((x == monst.getX())&&(y == monst.getY())) game.monster2.remove(i);     //Delete this monster of the list
+		}
+		for(int i = 0; i < game.monster3.size(); i++)//Monster 3
+		{
+			game.time = System.currentTimeMillis();	
+			Monster monst = (Monster) game.monster3.get(i);
+			if ((x == monst.getX())&&(y == monst.getY())) game.monster3.remove(i);     //Delete this monster of the list
+		}
+		return game;
 	}
-}
+	
+	}
