@@ -7,6 +7,11 @@ import model.Game;
 public class MonsterUpdate {
 	
 
+	/**
+	 * update the second type of Monster
+	 * @param game
+	 * @return game
+	 */
 	public static Game updateMonster2(Game game){
 			for(int i = 0; i < game.monster2.size(); i++){
 				Monster monst = (Monster) game.monster2.get(i);//Get the mosnter
@@ -20,6 +25,11 @@ public class MonsterUpdate {
 					game.monster2.set(i,monst);}}
 		return game;}
 
+	/**
+	 * update the third type of Monster
+	 * @param game
+	 * @return game
+	 */
 	public static Game updateMonster3(Game game){
 		for(int i = 0; i < game.monster3.size(); i++){
 			Monster monst = (Monster) game.monster3.get(i);//Get the mosnter
@@ -39,82 +49,60 @@ public class MonsterUpdate {
 			game.monster3.set(i, monst);}
 		return game;}
 	
-	public static Game updateMonster4(Game game)
-	{
+	/**
+	 * update the fourth type of Monster
+	 * @param game
+	 * @return game
+	 */
+	public static Game updateMonster4(Game game){
 		for(int i = 0; i < game.monster4.size(); i++){
 			Monster monst = (Monster) game.monster4.get(i);
 			int x = monst.getX();int y = monst.getY();
 			Random r = new Random();
 			int t = 0 + r.nextInt(5 - 0);
-			if((monst.getCount() < 6)&&(monst.getCount() > 1))
-			{
+			if((monst.getCount() < 6)&&(monst.getCount() > 1)){
 				if ((t == 1 )&&(game.map[x][y-1] == 0)||(game.map[x][y-1] == 8)){			
-				game.map[x][y] = 0;
-				if (game.map[x][y-1] == 8) game.status = "die";
-				y--; 
-				game.map[x][y] = 9;		
-				}     //UP
+				game.map[x][y] = 0;if (game.map[x][y-1] == 8) game.status = "die";y--; 
+				game.map[x][y] = 9;}     //UP
 			else if ((t == 2 )&&(game.map[x][y+1] == 0)||(game.map[x][y+1] == 8)){
-				game.map[x][y] = 0;
-				if (game.map[x][y+1] == 8) game.status = "die";
-				y++; 
-				game.map[x][y] = 9;				
-				}   //DOWN
+				game.map[x][y] = 0;if (game.map[x][y+1] == 8) game.status = "die";y++; 
+				game.map[x][y] = 9;}   //DOWN
 			else if ((t == 3 )&&(game.map[x-1][y] == 0)||(game.map[x-1][y] == 8)){
-				game.map[x][y] = 0;
-				if (game.map[x-1][y] == 8) game.status = "die";
-				x--; 
-				game.map[x][y] = 9;	
-				}   //LEFT
+				game.map[x][y] = 0;if (game.map[x-1][y] == 8) game.status = "die";x--; 
+				game.map[x][y] = 9;	}   //LEFT
 			else if ((t == 4 )&&(game.map[x+1][y] == 0)||(game.map[x+1][y] == 8)){
-				game.map[x][y] = 0;
-				if (game.map[x+1][y] == 8) game.status = "die";
-				x++; 
-				game.map[x][y] = 9;			
-				}//RIGHT
+				game.map[x][y] = 0;if (game.map[x+1][y] == 8) game.status = "die";x++; 
+				game.map[x][y] = 9;}//RIGHT
 			monst.setX(x);monst.setY(y);
-			System.out.println(monst.getCount());
-			monst.setCount(monst.getCount()+1);
-			game.monster4.set(i,monst);
-			}
-			else if(monst.getCount() > 5)
-			{
-				game.map[x][y] = 5;
-				game.monster4.remove(i);
-			}
-			else{monst.setCount(monst.getCount()+1);}
-			
-				
-		}	
-		return game;
-	}
+			monst.setCount(monst.getCount()+1);game.monster4.set(i,monst);}
+			else if(monst.getCount() > 5){
+				game.map[x][y] = 5;game.monster4.remove(i);}
+			else{monst.setCount(monst.getCount()+1);}}	return game;}
 	
-	
-public static Game updateMonster(Game game)
-	{
+	/**
+	 * Launch all the update of Monster
+	 * @param game
+	 * @return game
+	 */
+	public static Game updateMonster(Game game){
 		if (game.time + 300 < System.currentTimeMillis() ){
 			game.time = System.currentTimeMillis();
-			updateMonster2(game);
-			updateMonster3(game);		
-			updateMonster4(game);
-		}
-			
-		return game;
-	}
+			updateMonster2(game);updateMonster3(game);updateMonster4(game);}
+			return game;}
 
-
+	/**
+	 * Create a monster of Type 4
+	 * @param game
+	 * @return game
+	 */
 	public static Game createMonster4(Game game,String direction)
 	{
 		Random r = new Random();
 		int y = 0 + r.nextInt(100 - 0);
-		if (y < 6)
-		{
+		if (y < 6){
 			if(direction == "up"){game.monster4.add(new Monster(game.pX,game.pY+1));game.map[game.pX][game.pY+1] = 9;}
 			if(direction == "down"){game.monster4.add(new Monster(game.pX,game.pY-1));game.map[game.pX][game.pY-1] = 9;}
 			if(direction == "right"){game.monster4.add(new Monster(game.pX-1,game.pY));game.map[game.pX-1][game.pY] = 9;}
 			if(direction == "left"){game.monster4.add(new Monster(game.pX+1,game.pY));game.map[game.pX+1][game.pY] = 9;}
-			System.out.println("Spawn silver Fish");
-		}	
-		return game;
-	}
+			System.out.println("Spawn silver Fish");}return game;}
 }

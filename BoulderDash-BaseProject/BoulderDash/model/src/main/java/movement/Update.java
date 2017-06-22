@@ -6,7 +6,13 @@ import monster.Monster;
 public class Update {
 	
 	
-	
+	/**
+	 * Update a stone when she fall
+	 * @param pierreX
+	 * @param pierreY
+	 * @param game
+	 * @return game
+	 */
 	public static Game updateStone(int pierreX,int pierreY,Game game){
 		int pierreBisX = pierreX,pierreBisY = pierreY-1;
     	while((game.map[pierreX][pierreY+1] == 0)&&(pierreY != 18)&&(checkMonster(game,game.map[pierreX][pierreY+1]) == false)){
@@ -22,6 +28,13 @@ public class Update {
         if (game.map[pierreBisX][pierreBisY] == 3){updateDiamond(pierreBisX,pierreBisY,game);}     //Update the diamond at the top
 		return game;}
 
+	/**
+	 * Update a diamond when he fall
+	 * @param diamondX
+	 * @param diamondY
+	 * @param game
+	 * @return game
+	 */
 	public static Game updateDiamond(int diamondX,int diamondY,Game game){
 		int diamondBisX = diamondX,diamondBisY = diamondY-1;
     	while((game.map[diamondX][diamondY+1] == 0)&&(diamondY != 18)&&(checkMonster(game,game.map[diamondX][diamondY+1]) == false)){
@@ -37,6 +50,11 @@ public class Update {
         if (game.map[diamondBisX][diamondBisY] == 3){updateDiamond(diamondBisX,diamondBisY,game);}	
 		return game;}
 
+	/**
+	 * Update the game when the character move down
+	 * @param game
+	 * @return game
+	 */
 	public static Game updateDown(Game game)
 	{
         if  (game.map[game.pX][game.pY-2] == 4){//IF stone at the top
@@ -51,6 +69,12 @@ public class Update {
         }//END OF GAME
         return game;}
 
+	/**
+	 * Check if a monster is under the stone or diamond
+	 * @param game
+	 * @param block
+	 * @return game
+	 */
 	public static boolean checkMonster(Game game,int block)
 	{
 		boolean monster = false;
@@ -66,6 +90,13 @@ public class Update {
 		return monster;
 	}
 
+	/**
+	 * kill a monster on the map
+	 * @param game
+	 * @param x
+	 * @param y
+	 * @return game
+	 */
 	public static Game killMonster(Game game,int x,int y)
 	{
 		deleteMonster(game,x,y);
@@ -79,6 +110,13 @@ public class Update {
 			return game;}
 
 
+	/**
+	 * Delete a monster of the game when he is kill
+	 * @param game
+	 * @param x
+	 * @param y
+	 * @return game
+	 */
 	public static Game deleteMonster(Game game,int x,int y)
 	{
 		//Search in the list the ennemy at this position and delete him

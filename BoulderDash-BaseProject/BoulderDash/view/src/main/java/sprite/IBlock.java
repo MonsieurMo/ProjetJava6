@@ -16,61 +16,109 @@ public abstract class IBlock {
 	protected Sprite monster4 = new Monster4Sprite();
 	
 	public IBlock(){}
-	
+	/**
+	 * 
+	 * @return sprite
+	 */
 	public String getCobble()
 	{
 		return cobble.sprite();
 	}
 	
+	/**
+	 * 
+	 * @return sprite
+	 */
 	public String getDiamond()
 	{
 		return diamond.sprite();
 	}
 
+	/**
+	 * 
+	 * @return sprite
+	 */
 	public String getLeft()
 	{
 		return left.sprite();
 	}
 	
+	/**
+	 * 
+	 * @return sprite
+	 */
 	public String getRight()
 	{
 		return right.sprite();
 	}
 	
+	/**
+	 * 
+	 * @return sprite
+	 */
 	public String getStone()
 	{
 		return stone.sprite();
 	}
 	
+	/**
+	 * 
+	 * @return sprite
+	 */
 	public String getTunnel()
 	{
 		return tunnel.sprite();
 	}
 	
+	/**
+	 * 
+	 * @return sprite
+	 */
 	public String getUp()
 	{
 		return up.sprite();
 	}
 	
+	/**
+	 * 
+	 * @return sprite
+	 */
 	public String getWall()
 	{
 		return wall.sprite();
 	}
 	
+	/**
+	 * 
+	 * @return sprite
+	 */
 	public String getMonster1()
 	{
 		return monster1.sprite();
 	}
 	
+	/**
+	 * 
+	 * @return sprite
+	 */
 	public String getMonster2()
 	{
 		return monster2.sprite();
 	}
 	
+	/**
+	 * 
+	 * @return sprite
+	 */
 	public String getMonster3()
 	{
 		return monster3.sprite();
 	}
+	
+	/**
+	 * 
+	 * @return sprite
+	 */
 	public String getMonster4()
 	{
 		return monster4.sprite();

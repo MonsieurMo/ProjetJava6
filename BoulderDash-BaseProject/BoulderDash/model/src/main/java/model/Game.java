@@ -17,6 +17,9 @@ public class Game {
 	public LinkedList monster3 = new LinkedList<Monster>();
 	public LinkedList monster4 = new LinkedList<Monster>();
 	
+	/**
+	 * Set the game status at "run"
+	 */
 	public Game()
 	{
 		this.status = "run";
@@ -25,21 +28,35 @@ public class Game {
 	
 	//GETTER SETTER
 	
+	/**
+	 * @return pX the position X of the player
+	 */
 	public int getpX()
 	{
 		return this.pX;
 	}
 	
+	/**
+	 * @return pY the position Y of the player
+	 */
 	public int getpY()
 	{
 		return this.pY;
 	}
 	
+	/**
+	 * Set pX
+	 * @param pX
+	 */
 	public void setpX(int pX)
 	{
 		this.pX = pX;
 	}
 	
+	/**
+	 * Set pY
+	 * @param pY
+	 */
 	public void setpY(int pY)
 	{
 		this.pY = pY;

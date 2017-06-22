@@ -15,11 +15,22 @@ public class databaseConnector {
     private final static String LOGIN = "root";
     private final static String PASSWORD = "";
 	
+    /**
+     * Connection to the dataBase for loading level later
+     * @return connection the Connection at the database
+     * @throws SQLException
+     */
 	private static Connection connection() throws SQLException{
 	     Connection conn = DriverManager.getConnection(URL, LOGIN, PASSWORD); //Connexion to the dataBase
 	     System.out.println("Connexion to Data Base ready !");
 		return  conn;}
 	
+	/**
+	 * After the connection to the data base load the map in the object Game
+	 * @param game
+	 * @return game with the map load
+	 * @throws SQLException
+	 */
 	public static Game loadingLevel(Game game) throws SQLException{
 		try{Connection conn = connection();
 			Statement state = conn.createStatement();

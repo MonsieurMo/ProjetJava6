@@ -7,7 +7,11 @@ import movement.Update;
 public class Movement {
 	
 	
-	
+	/**
+	 * Update the position of character when  he move up
+	 * @param game
+	 * @return game
+	 */
 	public static Game up(Game game){
 		if (game.pY > 0){
             if ((game.map[game.pX][game.pY-1] != 4)&&(game.map[game.pX][game.pY-1] != 5)){
@@ -21,6 +25,11 @@ public class Movement {
                 MonsterUpdate.createMonster4(game,"up");}}
 		return game;}
 	
+	/**
+	 * Update the position of character when  he move down
+	 * @param game
+	 * @return game
+	 */
 	public static Game down(Game game){
 		if (game.pY < 19){
             if ((game.map[game.pX][game.pY+1] != 4)&&(game.map[game.pX][game.pY+1] != 5)){
@@ -36,6 +45,11 @@ public class Movement {
             	Update.updateDown(game);}}
 		return game;}
 
+	/**
+	 * Update the position of character when  he move left
+	 * @param game
+	 * @return game
+	 */
 	public static Game left(Game game){
     	if (game.pX > 0){
     		if ((game.map[game.pX-1][game.pY] == 4)&&(game.map[game.pX-2][game.pY] == 0)){
@@ -55,6 +69,11 @@ public class Movement {
             	Update.updateDiamond(game.pX+1,game.pY-1,game);}}
 		return game;}
 	
+	/**
+	 * Update the position of character when  he move right
+	 * @param game
+	 * @return game
+	 */
 	public static Game right(Game game){
 			if (game.pX < 29){
 			if ((game.map[game.pX+1][game.pY] == 4)&&(game.map[game.pX+2][game.pY] == 0)){

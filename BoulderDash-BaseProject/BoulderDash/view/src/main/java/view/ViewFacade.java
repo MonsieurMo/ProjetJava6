@@ -44,9 +44,7 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
         	{block[i][j] = new JLabel();//Creation of the item of the screen.
         	panel.add(block[i][j]);}}//Add the item in the panel
     }
-     
-
-    
+ 
     /**
      * Say to the method of printer class to paint the screen
      * 

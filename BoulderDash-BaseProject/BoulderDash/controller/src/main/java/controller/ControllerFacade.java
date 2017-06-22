@@ -58,8 +58,9 @@ public class ControllerFacade implements IController {
     public IModel getModel() {
         return this.model;
     } 
+
     /**
-     * MY CODE
+     * Check the last keyPress and assign an action to the model
      */
     public void checkKeyType(){
     	int keyType;
