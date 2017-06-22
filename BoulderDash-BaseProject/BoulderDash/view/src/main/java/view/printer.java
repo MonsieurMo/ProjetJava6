@@ -9,11 +9,20 @@ import sprite.*;
 public class printer extends JFrame {
 	
 	private static Blockk texture = new Blockk();
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Print for the first time the screen
+	 * 
+	 * @param map
+	 * @param pX
+	 * @param pY
+	 * @param block
+	 * @return block The map of texture
+	 */
+	
+	
 	public static JLabel[][] creation(int[][] map,int pX,int pY,JLabel[][] block){
     	System.out.println("Loading Texture...");
     	int x = 0,y=0,w = 0,v = 0,floor = 0;//Creation of variables
@@ -35,6 +44,19 @@ public class printer extends JFrame {
                 y +=32;v++;}
     		w++;v = 0;x += 32;y = 0;}		
 		return block;}
+	
+	/**
+	 * Print the screen with the map around the player;
+	 * 
+	 * 
+	 * @param map
+	 * @param pX
+	 * @param pY
+	 * @param block
+	 * @param pos
+	 * @return block The map of texture
+	 */
+	
 	
 	public static JLabel[][] print(int[][] map,int pX,int pY,JLabel[][] block,String pos){
 		int floor = 0,w = 0, v = 0;

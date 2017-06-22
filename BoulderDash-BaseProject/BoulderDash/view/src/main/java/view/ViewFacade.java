@@ -45,6 +45,16 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
         	panel.add(block[i][j]);}}//Add the item in the panel
     }
      
+
+    
+    /**
+     * Say to the method of printer class to paint the screen
+     * 
+     * @param map
+     * @param pX
+     * @parampY
+     */
+    
     public void creationLevel(int[][] map,int pX, int pY)//Take the map and assign the texture
     {
     	block = printer.creation(map, pX, pY,block);
@@ -55,17 +65,31 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
         this.requestFocus();//Set the focus on the frame
     }
   
+    /**
+     * Change the title with the actual score
+     * @param score
+     */
     public void updateScore(int score) //Update the score
     {
     	this.setTitle("Score : " + score);
     }
   
+    /**
+     * Say to the method of printer class to paint the screen
+     * 
+     * @param map
+     * @param pX
+     * @param pY
+     */
     public void printScreen(int[][] map,String pos,int pX,int pY)
     {
     	printer.print(map, pX, pY, block,pos);
         this.repaint();
     }
   
+    /**
+     * @return The Key who press
+     */
     public int getKey()//Get the Keykode of the last Key pressed when the controller not have an action in traitment
     { 
     	if (this.Press == true)
@@ -80,6 +104,12 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
     public void keyTyped(KeyEvent e) {
 
     }
+    /**
+     * Take the ley press and change the attribus keyType
+     * 
+     * @param e (KeyEvent)
+     */
+    
     public void keyPressed(KeyEvent e) {//Give the KeyCode of the KeyPressed
     	this.Press = true;
       	this.keyType = e.getKeyCode();
@@ -89,8 +119,15 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
     public void keyReleased(KeyEvent e) {
 
     }
+    
     public void update(Observable obs, Object obj) {    	
-    }   
+    }
+    /**
+     * Update the status of the game (if the character die or not...)
+     * 
+     * @param status
+     * @param step
+     */
     public void updateStatus(String status,int step){
     	if (status == "die"){JOptionPane pan = new JOptionPane();pan.showMessageDialog(null, "You die", "End of the game", JOptionPane.ERROR_MESSAGE);
     		System.exit(0);}
