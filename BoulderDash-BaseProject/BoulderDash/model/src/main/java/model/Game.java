@@ -1,5 +1,7 @@
 package model;
 
+import java.util.LinkedList;
+
 public class Game {
 	
 	public int map[][] = new int[30][20];	
@@ -8,6 +10,8 @@ public class Game {
 	public int step = 0;
 	
 	public int pX,pY;
+	public long time = 0;
+	LinkedList monster2 = new LinkedList<Monster2>();
 	
 	public Game()
 	{

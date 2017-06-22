@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 
 public class databaseConnector {
 	
-    private final static String PROCE = "CALL lvl5";
+    private final static String PROCE = "CALL lvl4";
     private final static String URL = "jdbc:mysql://localhost/boulderdash";
     private final static String LOGIN = "root";
     private final static String PASSWORD = "";
@@ -25,8 +25,8 @@ public class databaseConnector {
 		    ResultSet result = state.executeQuery(PROCE);      
 		    result.next();
 		    for (int j = 0;j<20;j++){
-		            for (int i = 0;i<30;i++){    	          	                
-		                game.map[i][j] =  Integer.parseInt(result.getObject(i+2).toString());
+		            for (int i = 0;i<30;i++){game.map[i][j] =  Integer.parseInt(result.getObject(i+2).toString());
+		            	if (game.map[i][j] == 6) game.monster2.add(new Monster2(i,j));//We add a monster to the list of monster
 		                if (Integer.parseInt(result.getObject(i+2).toString()) == 8){ game.setpX(i); game.setpY(j);}}
 		            result.next();}	        
 		        result.close();

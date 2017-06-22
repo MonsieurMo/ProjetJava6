@@ -35,5 +35,7 @@ public interface IModel {
     
     public int getStep();
     
+    public int[][] monster();
+    
     
 }

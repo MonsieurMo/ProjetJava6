@@ -21,14 +21,15 @@ public class Update {
 
 	public static Game updateDiamond(int diamondX,int diamondY,Game game){
 		int diamondBisX = diamondX,diamondBisY = diamondY-1;
-    	while((game.map[diamondX][diamondY+1] == 0)&&(diamondY != 18)){
+    	while((game.map[diamondX][diamondY+1] == 0)&&(diamondY != 18)&&(checkMonster(game,game.map[diamondX][diamondY+1]) == false)){
             game.map[diamondX][diamondY] = 0;
             diamondY++;
             game.map[diamondX][diamondY] = 3;}
-        if ((diamondY == 18)&&(game.map[diamondX][diamondY+1] == 0)){
+        if ((diamondY == 18)&&(game.map[diamondX][diamondY+1] == 0)&&(checkMonster(game,game.map[diamondX][diamondY+1]) == false)){
         	game.map[diamondX][diamondY] = 0;
         	diamondY++;
             game.map[diamondX][diamondY] = 3;}
+        if (checkMonster(game,game.map[diamondX][diamondY+1]) == true){killMonster(game,diamondX,diamondY+1);}//Kill the mosnter
         if (game.map[diamondBisX][diamondBisY] == 4){updateStone(diamondBisX,diamondBisY,game);}        
         if (game.map[diamondBisX][diamondBisY] == 3){updateDiamond(diamondBisX,diamondBisY,game);}	
 		return game;}
@@ -51,7 +52,7 @@ public class Update {
 	{
 		boolean monster = false;
 		
-		if(block == 2)
+		if((block == 2)||(block == 6))
 		{
 			return true;
 		}
@@ -66,13 +67,16 @@ public class Update {
 	{
 		System.out.println("Kill monster !");
 		game.map[x][y] = 0;
-		game.map[x+1][y] = 3;
-		game.map[x-1][y] = 3;
-		game.map[x][y+1] = 3;
+		if (game.map[x+1][y] != 2) game.map[x+1][y] = 0;
+		if (game.map[x-1][y] != 2)game.map[x-1][y] = 0;
+		if (game.map[x][y+1] != 2)game.map[x][y+1] = 0;
 		game.map[x][y-1] = 0;
-		updateDiamond(x-1,y,game);
-		updateDiamond(x+1,y,game);
-		updateDiamond(x,y+1,game);	
+		if (checkMonster(game,game.map[x+1][y]) == true) killMonster(game,x+1,y);
+		if (checkMonster(game,game.map[x-1][y]) == true) killMonster(game,x-1,y);
+		if (checkMonster(game,game.map[x][y+1]) == true) killMonster(game,x,y+1);
+		//updateDiamond(x-1,y,game);
+		//updateDiamond(x+1,y,game);
+		//updateDiamond(x,y+1,game);	
 			return game;
 	}
 }

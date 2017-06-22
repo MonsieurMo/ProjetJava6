@@ -72,6 +72,7 @@ public class ControllerFacade implements IController {
     		
     		this.getView().updateScore(this.getModel().getScore());
     		this.getView().updateStatus(this.getModel().getStatus(),this.getModel().getStep());
+    		this.getView().printScreen(this.getModel().monster(),"",this.getModel().getpX(),this.getModel().getpY());
     		try { Thread.sleep(20);}//A little delay
     		catch (InterruptedException e){ e.printStackTrace();}}
     }

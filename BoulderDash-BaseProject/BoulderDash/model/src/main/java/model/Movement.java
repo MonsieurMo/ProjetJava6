@@ -12,7 +12,7 @@ public class Movement {
                 if (game.map[game.pX][game.pY-1] == 3){//If a diamond is in front of
                 	game.score ++;
                 	if (game.score > 9) game.status = "end";}
-                if (game.map[game.pX][game.pY-1] == 2)game.status = "die";//If the character hit a monster
+                if ((game.map[game.pX][game.pY-1] == 2)||(game.map[game.pX][game.pY-1] == 6))game.status = "die";//If the character hit a monster
                 game.map[game.pX][game.pY] = 0;//The character move up
                 game.pY--;game.step++;
                 game.map[game.pX][game.pY] = 8;}}
@@ -24,7 +24,7 @@ public class Movement {
                 if (game.map[game.pX][game.pY+1] == 3){//If a diamond is bellow
                 	game.score ++;
                 	if (game.score > 9) game.status = "end";}
-                if (game.map[game.pX][game.pY+1] == 2)game.status = "die";//If the character hit a monster
+                if ((game.map[game.pX][game.pY+1] == 2)||(game.map[game.pX][game.pY+1] == 6))game.status = "die";//If the character hit a monster
                 game.map[game.pX][game.pY] = 0;//The character move
                 game.pY++;game.step++;
                 game.map[game.pX][game.pY] = 8;}
@@ -39,9 +39,8 @@ public class Movement {
             	Update.updateStone(game.pX-1,game.pY,game);game.step++;}//When the case behind the stop is a tunnel the caracter push
             if ((game.map[game.pX-1][game.pY] != 4)&&(game.map[game.pX-1][game.pY] != 5)){
                 if (game.map[game.pX-1][game.pY] == 3){ //IF DIAMOND
-                    game.score ++;
-                    if (game.score > 9) game.status = "end";}
-                if (game.map[game.pX-1][game.pY] == 2)game.status = "die";//If the character hit a monster
+                    game.score ++;if (game.score > 9) game.status = "end";}
+                if ((game.map[game.pX-1][game.pY] == 2)||(game.map[game.pX-1][game.pY] == 6))game.status = "die";//If the character hit a monster
                 game.map[game.pX][game.pY] = 0;//Character move
                 game.pX--;game.step++;
                 game.map[game.pX][game.pY] = 8;}
@@ -60,7 +59,7 @@ public class Movement {
                 if (game.map[game.pX+1][game.pY] == 3){ //IF diamond
                     game.score ++;
                     if (game.score > 9) game.status = "end";}
-                if ( game.map[game.pX+1][game.pY]== 2 )game.status = "die";//If a character hit a monster
+                if (( game.map[game.pX+1][game.pY]== 2 )||(game.map[game.pX+1][game.pY]== 6))game.status = "die";//If a character hit a monster
                 game.map[game.pX][game.pY] = 0;//The character moove
                 game.pX++;game.step++;
                 game.map[game.pX][game.pY] = 8;}           

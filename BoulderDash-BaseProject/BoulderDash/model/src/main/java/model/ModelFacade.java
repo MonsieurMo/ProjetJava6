@@ -68,4 +68,11 @@ public class ModelFacade extends Observable implements IModel {
     {
     	return game.step;
     }
+
+    public int[][] monster()
+    {
+    	Monster.updateMonster(game);   	
+    	return this.game.map;
+    }
+
 }
