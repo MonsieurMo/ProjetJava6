@@ -8,24 +8,24 @@ public class Update {
 	
 	/**
 	 * Update a stone when she fall
-	 * @param pierreX
-	 * @param pierreY
+	 * @param stoneX
+	 * @param stoneY
 	 * @param game
 	 * @return game
 	 */
-	public static Game updateStone(int pierreX,int pierreY,Game game){
-		int pierreBisX = pierreX,pierreBisY = pierreY-1;
-    	while((game.map[pierreX][pierreY+1] == 0)&&(pierreY != 18)&&(checkMonster(game,game.map[pierreX][pierreY+1]) == false)){
-            game.map[pierreX][pierreY] = 0;
-            pierreY++;
-            game.map[pierreX][pierreY] = 4;}
-        if ((pierreY == 18)&&(game.map[pierreX][pierreY+1] == 0)&&(checkMonster(game,game.map[pierreX][pierreY+1]) == false)){
-        	game.map[pierreX][pierreY] = 0;
-            pierreY++;
-            game.map[pierreX][pierreY] = 4;}
-        if (checkMonster(game,game.map[pierreX][pierreY+1]) == true){killMonster(game,pierreX,pierreY+1);}//Kill the mosnter
-        if (game.map[pierreBisX][pierreBisY] == 4){updateStone(pierreBisX,pierreBisY,game);}       //Update the stone at the top
-        if (game.map[pierreBisX][pierreBisY] == 3){updateDiamond(pierreBisX,pierreBisY,game);}     //Update the diamond at the top
+	public static Game updateStone(int stoneX,int stoneY,Game game){
+		int stoneBisX = stoneX,stoneBisY = stoneY-1;
+    	while((game.map[stoneX][stoneY+1] == 0)&&(stoneY != 18)&&(checkMonster(game,game.map[stoneX][stoneY+1]) == false)){
+            game.map[stoneX][stoneY] = 0;
+            stoneY++;
+            game.map[stoneX][stoneY] = 4;}
+        if ((stoneY == 18)&&(game.map[stoneX][stoneY+1] == 0)&&(checkMonster(game,game.map[stoneX][stoneY+1]) == false)){
+        	game.map[stoneX][stoneY] = 0;
+            stoneY++;
+            game.map[stoneX][stoneY] = 4;}
+        if (checkMonster(game,game.map[stoneX][stoneY+1]) == true){killMonster(game,stoneX,stoneY+1);}//Kill the monster
+        if (game.map[stoneBisX][stoneBisY] == 4){updateStone(stoneBisX,stoneBisY,game);}       //Update the stone at the top
+        if (game.map[stoneBisX][stoneBisY] == 3){updateDiamond(stoneBisX,stoneBisY,game);}     //Update the diamond at the top
 		return game;}
 
 	/**
