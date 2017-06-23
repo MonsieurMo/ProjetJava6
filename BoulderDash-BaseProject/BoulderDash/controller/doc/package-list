@@ -1,9 +1,5 @@
 controller
-dataBase
 main
 model
-model.dao
-monster
-movement
-sprite
 view
+view.sprite

@@ -2,7 +2,7 @@ package model;
 
 import java.util.LinkedList;
 
-import monster.Monster;
+import model.monster.Monster;
 
 public class Game {
 	

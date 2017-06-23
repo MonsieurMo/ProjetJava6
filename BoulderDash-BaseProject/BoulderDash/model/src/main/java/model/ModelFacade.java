@@ -4,9 +4,9 @@ package model;
 import java.sql.SQLException;
 import java.util.Observable;
 
-import dataBase.databaseConnector;
-import monster.MonsterUpdate;
-import movement.Movement;
+import model.dataBase.databaseConnector;
+import model.monster.MonsterUpdate;
+import model.movement.Movement;
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
  *
