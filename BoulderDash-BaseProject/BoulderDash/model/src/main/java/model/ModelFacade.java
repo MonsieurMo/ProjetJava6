@@ -28,8 +28,8 @@ public class ModelFacade extends Observable implements IModel {
   
     /**
      * Create the level with the dataBase
-     * @throws SQLException
-     * @return game when the map are load
+     * @throws	SQLException
+     * @return	game when the map are load
      */
     public int[][] creationLevel() throws SQLException{    		
     	game = databaseConnector.loadingLevel(game);//Get the map update and the caracter position update 	
@@ -37,28 +37,28 @@ public class ModelFacade extends Observable implements IModel {
        
     /**
      * Return the map of the game
-     * @return game.map
+     * @return	game.map
      */
     public int[][] getMap(){
     	return this.game.map;}
     
     /**
      * Return the score of the game
-     * @return game.score
+     * @return	game.score
      */
     public int getScore(){
     	return this.game.score;}
     
     /**
      * The character move up
-     * @return game.map when the map was update
+     * @return	game.map	when the map was update
      */
     public int[][] up(){
     	game = Movement.up(game);
     	return this.game.map;}
     /**
      * The character move down
-     * @return game.map when the map was update
+     * @return	game.map	when the map was update
      */
     public int[][] down(){
     	game = Movement.down(game);
@@ -66,7 +66,7 @@ public class ModelFacade extends Observable implements IModel {
 
     /**
      * The character move left
-     * @return game.map when the map was update
+     * @return	game.map	when the map was update
      */
     public int[][] left(){
     	game = Movement.left(game);
@@ -74,26 +74,29 @@ public class ModelFacade extends Observable implements IModel {
     
     /**
      * The character move right
-     * @return game.map when the map was update
+     * @return	game.map	when the map was update
      */
     public int[][] right(){
     	game = Movement.right(game);
     	return this.game.map;}
 
     /**
-     * @return game.pX
+     * Get X
+     * @return game.pX Postion X
      */
     public int getpX(){
     	return game.getpX();}
     
     /**
-     * @return game.pY
+     * Get Y
+     * @return	game.pY postion y
      */
     public int getpY(){
     	return game.getpY();}
 
     /**
-     * @return game.status 
+     * Get status
+     * @return	game.status	Status
      */
     public String getStatus()
     {
@@ -101,7 +104,8 @@ public class ModelFacade extends Observable implements IModel {
     }
 
     /**
-     * @return game.step
+     * Get step
+     * @return game.step	step
      */
     public int getStep()
     {
@@ -110,7 +114,7 @@ public class ModelFacade extends Observable implements IModel {
 
     /**
      * Update all the monster of the map
-     * @return game.map
+     * @return	game.map	the map
      */
     public int[][] monster()
     {

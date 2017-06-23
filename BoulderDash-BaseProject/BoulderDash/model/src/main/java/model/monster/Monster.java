@@ -19,7 +19,7 @@ public class Monster {
 	
 	/**
 	 * Return X position
-	 * @return X
+	 * @return X	position x
 	 */
 	public int getX()
 	{
@@ -28,7 +28,7 @@ public class Monster {
 	
 	/**
 	 * Return Y position
-	 * @return X
+	 * @return Y	postion Y
 	 */
 	public int getY()
 	{
@@ -37,7 +37,7 @@ public class Monster {
 	
 	/**
 	 * Return last direction of the monster
-	 * @return direction
+	 * @return direction	DIRECTION
 	 */
 	public String getDirection()
 	{
@@ -46,7 +46,7 @@ public class Monster {
 	
 	/**
 	 * Return the count of step of monster
-	 * @return count
+	 * @return count	count
 	 */
 	public int getCount()
 	{
@@ -55,7 +55,7 @@ public class Monster {
 	
 	/**
 	 * Set X
-	 * @param x
+	 * @param x	X
 	 */
 	public void setX(int x)
 	{
@@ -64,7 +64,7 @@ public class Monster {
 	
 	/**
 	 * Set Y
-	 * @param y
+	 * @param y	Y
 	 */
 	public void setY(int y)
 	{
@@ -73,7 +73,7 @@ public class Monster {
 	
 	/**
 	 * Set direction
-	 * @param direction
+	 * @param direction	direction
 	 */
 	public void setDirection(String direction)
 	{
@@ -82,7 +82,7 @@ public class Monster {
 	
 	/**
 	 * Set Count
-	 * @param count
+	 * @param count	count
 	 */
 	public void setCount(int count)
 	{

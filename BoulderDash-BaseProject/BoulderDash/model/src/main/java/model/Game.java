@@ -33,7 +33,8 @@ public class Game {
 	//GETTER SETTER
 	
 	/**
-	 * @return pX the position X of the player
+	 * getX
+	 * @return	pX	the position X of the player
 	 */
 	public int getpX()
 	{
@@ -41,7 +42,8 @@ public class Game {
 	}
 	
 	/**
-	 * @return pY the position Y of the player
+	 * get Y
+	 * @return	pY	the position Y of the player
 	 */
 	public int getpY()
 	{
@@ -50,7 +52,7 @@ public class Game {
 	
 	/**
 	 * Set pX
-	 * @param pX
+	 * @param	pX	postion X
 	 */
 	public void setpX(int pX)
 	{
@@ -59,7 +61,7 @@ public class Game {
 	
 	/**
 	 * Set pY
-	 * @param pY
+	 * @param	pY	postion Y
 	 */
 	public void setpY(int pY)
 	{

@@ -55,6 +55,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-report-plugin</artifactId>
         <version>2.20</version>
+        <configuration>
+          <outputDirectory>${basedir}/target/staging</outputDirectory>
+        </configuration>
       </plugin>
     </plugins>
   </reporting>

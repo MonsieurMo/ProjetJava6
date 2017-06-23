@@ -22,8 +22,8 @@ public class databaseConnector {
 	
     /**
      * Connection to the dataBase for loading level later
-     * @return connection the Connection at the database
-     * @throws SQLException
+     * @return	connection	the Connection at the database
+     * @throws	SQLException SQLEXCEPTION
      */
 	private static Connection connection() throws SQLException{
 	     Connection conn = DriverManager.getConnection(URL, LOGIN, PASSWORD); //Connexion to the dataBase
@@ -32,9 +32,9 @@ public class databaseConnector {
 	
 	/**
 	 * After the connection to the data base load the map in the object Game
-	 * @param game
-	 * @return game with the map load
-	 * @throws SQLException
+	 * @param game the game
+	 * @return game	with the map load
+	 * @throws SQLException	SQLEXEPT
 	 */
 	public static Game loadingLevel(Game game) throws SQLException{
 		try{Connection conn = connection();

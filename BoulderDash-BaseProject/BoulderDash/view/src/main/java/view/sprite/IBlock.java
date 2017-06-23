@@ -17,8 +17,8 @@ public abstract class IBlock {
 	
 	public IBlock(){}
 	/**
-	 * 
-	 * @return sprite
+	 * return sprite
+	 * @return sprite	sprite
 	 */
 	public String getCobble()
 	{
@@ -26,8 +26,8 @@ public abstract class IBlock {
 	}
 	
 	/**
-	 * 
-	 * @return sprite
+	 * return sprite
+	 * @return sprite	sprite
 	 */
 	public String getDiamond()
 	{
@@ -35,8 +35,8 @@ public abstract class IBlock {
 	}
 
 	/**
-	 * 
-	 * @return sprite
+	 * return sprite
+	 * @return sprite	sprite
 	 */
 	public String getLeft()
 	{
@@ -44,8 +44,8 @@ public abstract class IBlock {
 	}
 	
 	/**
-	 * 
-	 * @return sprite
+	 * return sprite
+	 * @return sprite	sprite
 	 */
 	public String getRight()
 	{
@@ -53,8 +53,8 @@ public abstract class IBlock {
 	}
 	
 	/**
-	 * 
-	 * @return sprite
+	 * return sprite
+	 * @return sprite	sprite
 	 */
 	public String getStone()
 	{
@@ -62,8 +62,8 @@ public abstract class IBlock {
 	}
 	
 	/**
-	 * 
-	 * @return sprite
+	 * return sprite
+	 * @return sprite	sprite
 	 */
 	public String getTunnel()
 	{
@@ -71,8 +71,8 @@ public abstract class IBlock {
 	}
 	
 	/**
-	 * 
-	 * @return sprite
+	 * return sprite
+	 * @return sprite	sprite
 	 */
 	public String getUp()
 	{
@@ -80,8 +80,8 @@ public abstract class IBlock {
 	}
 	
 	/**
-	 * 
-	 * @return sprite
+	 * return sprite
+	 * @return sprite	sprite
 	 */
 	public String getWall()
 	{
@@ -89,8 +89,8 @@ public abstract class IBlock {
 	}
 	
 	/**
-	 * 
-	 * @return sprite
+	 * return sprite
+	 * @return sprite	sprite
 	 */
 	public String getMonster1()
 	{
@@ -98,8 +98,8 @@ public abstract class IBlock {
 	}
 	
 	/**
-	 * 
-	 * @return sprite
+	 * return sprite
+	 * @return sprite	sprite
 	 */
 	public String getMonster2()
 	{
@@ -107,8 +107,8 @@ public abstract class IBlock {
 	}
 	
 	/**
-	 * 
-	 * @return sprite
+	 * return sprite
+	 * @return sprite	sprite
 	 */
 	public String getMonster3()
 	{
@@ -116,8 +116,8 @@ public abstract class IBlock {
 	}
 	
 	/**
-	 * 
-	 * @return sprite
+	 * return sprite
+	 * @return sprite	sprite
 	 */
 	public String getMonster4()
 	{

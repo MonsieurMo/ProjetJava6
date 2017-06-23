@@ -11,11 +11,7 @@ import model.Game;
 public class MonsterUpdate {
 	
 
-	/**
-	 * update the second type of Monster
-	 * @param game
-	 * @return game
-	 */
+
 	public static Game updateMonster2(Game game){
 			for(int i = 0; i < game.monster2.size(); i++){
 				Monster monst = (Monster) game.monster2.get(i);//Get the mosnter
@@ -29,11 +25,7 @@ public class MonsterUpdate {
 					game.monster2.set(i,monst);}}
 		return game;}
 
-	/**
-	 * update the third type of Monster
-	 * @param game
-	 * @return game
-	 */
+
 	public static Game updateMonster3(Game game){
 		for(int i = 0; i < game.monster3.size(); i++){
 			Monster monst = (Monster) game.monster3.get(i);//Get the mosnter
@@ -53,11 +45,7 @@ public class MonsterUpdate {
 			game.monster3.set(i, monst);}
 		return game;}
 	
-	/**
-	 * update the fourth type of Monster
-	 * @param game
-	 * @return game
-	 */
+
 	public static Game updateMonster4(Game game){
 		for(int i = 0; i < game.monster4.size(); i++){
 			Monster monst = (Monster) game.monster4.get(i);
@@ -83,22 +71,14 @@ public class MonsterUpdate {
 				game.map[x][y] = 5;game.monster4.remove(i);}
 			else{monst.setCount(monst.getCount()+1);}}	return game;}
 	
-	/**
-	 * Launch all the update of Monster
-	 * @param game
-	 * @return game
-	 */
+
 	public static Game updateMonster(Game game){
 		if (game.time + 300 < System.currentTimeMillis() ){
 			game.time = System.currentTimeMillis();
 			updateMonster2(game);updateMonster3(game);updateMonster4(game);}
 			return game;}
 
-	/**
-	 * Create a monster of Type 4
-	 * @param game
-	 * @return game
-	 */
+
 	public static Game createMonster4(Game game,String direction)
 	{
 		Random r = new Random();

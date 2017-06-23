@@ -13,10 +13,10 @@ public class Update {
 	
 	/**
 	 * Update a stone when she fall
-	 * @param stoneX
-	 * @param stoneY
-	 * @param game
-	 * @return game
+	 * @param stoneX	stoneX
+	 * @param stoneY	stoneY
+	 * @param game	game
+	 * @return game	game
 	 */
 	public static Game updateStone(int stoneX,int stoneY,Game game){
 		int stoneBisX = stoneX,stoneBisY = stoneY-1;
@@ -35,10 +35,10 @@ public class Update {
 
 	/**
 	 * Update a diamond when he fall
-	 * @param diamondX
-	 * @param diamondY
-	 * @param game
-	 * @return game
+	 * @param diamondX	diamondX
+	 * @param diamondY	diamondY
+	 * @param game	game
+	 * @return game	game
 	 */
 	public static Game updateDiamond(int diamondX,int diamondY,Game game){
 		int diamondBisX = diamondX,diamondBisY = diamondY-1;
@@ -57,8 +57,8 @@ public class Update {
 
 	/**
 	 * Update the game when the character move down
-	 * @param game
-	 * @return game
+	 * @param game	game
+	 * @return game	game
 	 */
 	public static Game updateDown(Game game)
 	{
@@ -76,9 +76,9 @@ public class Update {
 
 	/**
 	 * Check if a monster is under the stone or diamond
-	 * @param game
-	 * @param block
-	 * @return game
+	 * @param game	game
+	 * @param block	block
+	 * @return game	game
 	 */
 	public static boolean checkMonster(Game game,int block)
 	{
@@ -97,10 +97,10 @@ public class Update {
 
 	/**
 	 * kill a monster on the map
-	 * @param game
-	 * @param x
-	 * @param y
-	 * @return game
+	 * @param game	game
+	 * @param x	x
+	 * @param y	y
+	 * @return game	game
 	 */
 	public static Game killMonster(Game game,int x,int y)
 	{
@@ -117,10 +117,10 @@ public class Update {
 
 	/**
 	 * Delete a monster of the game when he is kill
-	 * @param game
-	 * @param x
-	 * @param y
-	 * @return game
+	 * @param game	game
+	 * @param x	x
+	 * @param y	y
+	 * @return game	game
 	 */
 	public static Game deleteMonster(Game game,int x,int y)
 	{

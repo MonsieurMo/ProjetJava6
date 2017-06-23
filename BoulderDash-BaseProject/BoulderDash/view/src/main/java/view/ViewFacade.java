@@ -48,9 +48,9 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
     /**
      * Say to the method of printer class to paint the screen
      * 
-     * @param map
-     * @param pX
-     * @parampY
+     * @param map	map
+     * @param pX	pX
+     * @param pY	pY
      */
     
     public void creationLevel(int[][] map,int pX, int pY)//Take the map and assign the texture
@@ -65,7 +65,7 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
   
     /**
      * Change the title with the actual score
-     * @param score
+     * @param score	score
      */
     public void updateScore(int score) //Update the score
     {
@@ -75,9 +75,9 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
     /**
      * Say to the method of printer class to paint the screen
      * 
-     * @param map
-     * @param pX
-     * @param pY
+     * @param map	map
+     * @param pX	pX
+     * @param pY	pY
      */
     public void printScreen(int[][] map,String pos,int pX,int pY)
     {
@@ -86,6 +86,7 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
     }
   
     /**
+     * return key
      * @return The Key who press
      */
     public int getKey()//Get the Keykode of the last Key pressed when the controller not have an action in traitment
@@ -105,7 +106,7 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
     /**
      * Take the ley press and change the attribus keyType
      * 
-     * @param e (KeyEvent)
+     * @param e	(KeyEvent)
      */
     
     public void keyPressed(KeyEvent e) {//Give the KeyCode of the KeyPressed
@@ -123,8 +124,8 @@ public class ViewFacade extends JFrame implements IView,KeyListener,Observer {
     /**
      * Update the status of the game (if the character die or not...)
      * 
-     * @param status
-     * @param step
+     * @param status	status	
+     * @param step	step
      */
     public void updateStatus(String status,int step){
     	if (status == "die"){JOptionPane pan = new JOptionPane();pan.showMessageDialog(null, "You die", "End of the game", JOptionPane.ERROR_MESSAGE);

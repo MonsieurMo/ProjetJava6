@@ -14,8 +14,8 @@ public class Movement {
 	
 	/**
 	 * Update the position of character when  he move up
-	 * @param game
-	 * @return game
+	 * @param game	game
+	 * @return game	game
 	 */
 	public static Game up(Game game){
 		if (game.pY > 0){
@@ -32,8 +32,8 @@ public class Movement {
 	
 	/**
 	 * Update the position of character when  he move down
-	 * @param game
-	 * @return game
+	 * @param game	game
+	 * @return game	game
 	 */
 	public static Game down(Game game){
 		if (game.pY < 19){
@@ -52,8 +52,8 @@ public class Movement {
 
 	/**
 	 * Update the position of character when  he move left
-	 * @param game
-	 * @return game
+	 * @param game	game
+	 * @return game	game
 	 */
 	public static Game left(Game game){
     	if (game.pX > 0){
@@ -76,8 +76,8 @@ public class Movement {
 	
 	/**
 	 * Update the position of character when  he move right
-	 * @param game
-	 * @return game
+	 * @param game	game
+	 * @return game	game
 	 */
 	public static Game right(Game game){
 			if (game.pX < 29){

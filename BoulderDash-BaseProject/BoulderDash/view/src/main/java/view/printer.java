@@ -15,11 +15,11 @@ public class printer extends JFrame {
 	/**
 	 * Print for the first time the screen
 	 * 
-	 * @param map
-	 * @param pX
-	 * @param pY
-	 * @param block
-	 * @return block The map of texture
+	 * @param map	map
+	 * @param pX	pX
+	 * @param pY	pY
+	 * @param block	block
+	 * @return block	The map of texture
 	 */
 	
 	
@@ -49,12 +49,12 @@ public class printer extends JFrame {
 	 * Print the screen with the map around the player;
 	 * 
 	 * 
-	 * @param map
-	 * @param pX
-	 * @param pY
-	 * @param block
-	 * @param pos
-	 * @return block The map of texture
+	 * @param map	map
+	 * @param pX	pX
+	 * @param pY	pY
+	 * @param block	block
+	 * @param pos	pos
+	 * @return block	The map of texture
 	 */
 	
 	
