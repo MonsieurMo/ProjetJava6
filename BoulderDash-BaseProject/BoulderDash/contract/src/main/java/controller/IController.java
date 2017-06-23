@@ -9,7 +9,9 @@ package controller;
  */
 public interface IController {
 	
-	
+	/**
+	 * checKeyType
+	 */
 	void checkKeyType();
 	
 
