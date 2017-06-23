@@ -29,6 +29,9 @@ public class Music extends Thread{
 
     }
 
+    /**
+     * Launch the Music theme in loop
+     */
     public void run()
     {
         while (1==1)
