@@ -3,7 +3,11 @@ package model.monster;
 import java.util.Random;
 
 import model.Game;
-
+/**
+ * The class who update the position of monster
+ * @author Etienne
+ *
+ */
 public class MonsterUpdate {
 	
 
@@ -99,7 +103,7 @@ public class MonsterUpdate {
 	{
 		Random r = new Random();
 		int y = 0 + r.nextInt(100 - 0);
-		if (y < 6){
+		if (y < 2){
 			if(direction == "up"){game.monster4.add(new Monster(game.pX,game.pY+1));game.map[game.pX][game.pY+1] = 9;}
 			if(direction == "down"){game.monster4.add(new Monster(game.pX,game.pY-1));game.map[game.pX][game.pY-1] = 9;}
 			if(direction == "right"){game.monster4.add(new Monster(game.pX-1,game.pY));game.map[game.pX-1][game.pY] = 9;}

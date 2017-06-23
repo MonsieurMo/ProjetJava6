@@ -3,6 +3,11 @@ package model.movement;
 import model.Game;
 import model.monster.Monster;
 
+/**
+ * Update the map, rock,diamond...
+ * @author Etienne
+ *
+ */
 public class Update {
 	
 	

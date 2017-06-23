@@ -8,9 +8,14 @@ import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+/**
+ * Data Base connector for laod the map
+ * @author Etienne
+ *
+ */
 public class databaseConnector {
 	
-    private final static String PROCE = "CALL lvl3";
+    private final static String PROCE = "CALL lvl1";
     private final static String URL = "jdbc:mysql://localhost/boulderdash";
     private final static String LOGIN = "root";
     private final static String PASSWORD = "";

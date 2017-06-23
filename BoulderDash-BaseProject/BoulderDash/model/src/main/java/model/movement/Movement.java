@@ -4,6 +4,11 @@ import model.Game;
 import model.monster.MonsterUpdate;
 import model.movement.Update;
 
+/**
+ * Moves the player
+ * @author Etienne
+ *
+ */
 public class Movement {
 	
 	

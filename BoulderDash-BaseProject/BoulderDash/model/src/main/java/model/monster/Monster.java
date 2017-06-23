@@ -1,5 +1,9 @@
 package model.monster;
-
+/**
+ * The object who countains information about position and direction of monster on the map
+ * @author Etienne
+ *
+ */
 public class Monster {
 	
 	private int i1;

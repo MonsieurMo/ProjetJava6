@@ -3,7 +3,11 @@ package model;
 import java.util.LinkedList;
 
 import model.monster.Monster;
-
+/**
+ * The model of the game, countains the map, the postion of player, the list of monster....
+ * @author Etienne
+ *
+ */
 public class Game {
 	
 	public int map[][] = new int[30][20];	
